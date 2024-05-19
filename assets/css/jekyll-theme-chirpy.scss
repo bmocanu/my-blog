@@ -1,0 +1,33 @@
+---
+---
+
+@import 'main';
+
+/* append your custom style below */
+
+@font-face {
+  font-family: 'JetBrains Mono Regular';
+  src: url("/blog/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2") format("opentype");
+}
+
+.content {
+  font-size: 1.2rem;
+}
+
+#sidebar {
+  background: #111;
+}
+
+pre code {
+  font-family: "JetBrains Mono Regular", monospace;
+  font-size: 1rem;
+}
+
+.highlight {
+  //padding: 10px;
+}
+
+.highlight pre {
+  font-family: "JetBrains Mono Regular", monospace;
+  font-size: 1rem;
+}
