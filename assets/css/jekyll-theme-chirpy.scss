@@ -31,3 +31,11 @@ pre code {
   font-family: "JetBrains Mono Regular", monospace;
   font-size: 1rem;
 }
+
+#sidebar #avatar img:hover {
+  transform: scale(2.2);
+}
+
+#sidebar #avatar img {
+  transition: transform 2s ease;
+}
