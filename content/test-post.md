@@ -2,7 +2,7 @@
 date = 2022-05-16T15:00:00Z
 description = "Sample article showcasing syntax highlighting and formatting for Code Blocks with a custom theme."
 draft = false
-title = "Code Blocks Theme"
+title = "Code Blocks Theme 2222"
 
 [extra]
 keywords = "Code, Code Blocks, Syntax, Syntax Highlighting, Theme"
