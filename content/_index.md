@@ -20,8 +20,8 @@ template = "homepage.html"
 </style>
 
 <div class="homepage-hero">
-    <h1 class="homepage-hero-title">Homepage</h1>
-    <p class="homepage-hero-subtitle">Personal site of Bogdan Mocanu, software engineer and tech enthusiast</p>
+    <h1 class="homepage-hero-title">Welcome</h1>
+    <!-- <p class="homepage-hero-subtitle">Personal site of Bogdan Mocanu, software engineer from Brașov, Romania</p> -->
 </div>
 
 # Latest posts

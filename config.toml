@@ -2,8 +2,8 @@
 # and this: https://github.com/not-matthias/apollo/blob/main/config.toml#L14
 
 base_url = "https://bogdan.mocanu.ws"
-title = "Bogdan's tech"
-description = "Personal site of Bogdan Mocanu, software engineer and tech enthusiast"
+title = "Bogdan"
+description = "Personal site and blog of Bogdan Mocanu, software engineer and tech enthusiast"
 build_search_index = true
 generate_feeds = true
 compile_sass = true
@@ -21,12 +21,30 @@ include_content = true
 index_format = "elasticlunr_json"
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-    { theme = "ayu-dark", filename = "syntax-theme-dark.css" },
-    { theme = "ayu-light", filename = "syntax-theme-light.css" },
-]
+# When set to "true", emoji aliases translated to their corresponding
+# Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
+render_emoji = false
+
+[markdown.highlighting]
+# When set to "true", missing highlight languages are treated as errors. Defaults to false but recommended to set to true.
+error_on_missing_language = true
+# Selecting a theme is always required: you have a choice between single (1) or dual themes (2).
+# Only outputting CSS classes like before 0.22 is not possible anymore.
+# See here for themes: https://github.com/getzola/giallo?tab=readme-ov-file#themes
+# 1. If you use a single theme, put its name here. See the syntax highlighting page for the possible choices.
+theme = "ayu-dark"
+# 2. If you want light/dark themes, use the 2 fields below instead. See the syntax highlighting page for the possible choices.
+#light_theme = "ayu-light"
+#dark_theme = "ayu-dark"
+# Whether to use inline hex colours (`inline`) or CSS classes (`class`) 
+#style = "inline"
+# A list of files for additional JSON TextMate grammars
+# See here for grammars: https://github.com/getzola/giallo?tab=readme-ov-file#grammars
+# extra_grammars = []
+# A list of files for additional JSON TextMate themes
+# Get themes from https://textmate-grammars-themes.netlify.app/
+# extra_themes = []
+
 
 [extra]
 toc = true
