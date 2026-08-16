@@ -84,9 +84,9 @@ stylesheets = [
 sort_by = "page_count"         # e.g. name, page_count
 reverse = true
 
-# [extra.analytics]
-# enabled = false
-# 
+[extra.analytics]
+enabled = false
+
 # [extra.analytics.goatcounter]
 # user = "your_user"
 # host = "example.com" # default= goatcounter.com
