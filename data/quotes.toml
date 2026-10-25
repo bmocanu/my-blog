@@ -1,0 +1,31 @@
+# Quotes for the "quote of the day" on the home page.
+# One quote is picked at random in the browser on every page load.
+# Add more with another [[quotes]] block.
+
+[[quotes]]
+text = "Simplicity is prerequisite for reliability."
+author = "Edsger W. Dijkstra"
+
+[[quotes]]
+text = "Programs must be written for people to read, and only incidentally for machines to execute."
+author = "Harold Abelson and Gerald Jay Sussman"
+
+[[quotes]]
+text = "Premature optimization is the root of all evil."
+author = "Donald Knuth"
+
+[[quotes]]
+text = "Make it run, make it right, make it fast."
+author = "Kent Beck"
+
+[[quotes]]
+text = "The future is already here - it's just not very evenly distributed."
+author = "William Gibson"
+
+[[quotes]]
+text = "Developers are drawn to complexity like moths to a flame, frequently with the same result."
+author = "Neal Ford"
+
+[[quotes]]
+text = "Java is a blue collar language. It's not PhD thesis material but a language for a job."
+author = "James Gosling, in 1997's paper 'The Feel of Java'"

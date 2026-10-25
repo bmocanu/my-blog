@@ -29,6 +29,8 @@
   # Latest posts block rendered below the home page content (0 disables it).
   [params.home]
     latestPosts = 5
+    # Optional: if set, "Latest posts" lists every post from this date on and the rest go under "Older posts" (overrides latestPosts).
+    # latestSince = 2026-01-01
     sections = ['posts']
 
   # Optional: link to the page source in the post meta line

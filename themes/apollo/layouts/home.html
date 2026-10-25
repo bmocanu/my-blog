@@ -7,10 +7,26 @@
         {{ .Content }}
 
         {{- $count := int site.Params.home.latestPosts }}
-        {{- if gt $count 0 }}
-          {{- $posts := where site.RegularPages "Section" "in" site.Params.home.sections }}
-          {{- with first $count $posts.ByDate.Reverse }}
+        {{- $since := site.Params.home.latestSince }}
+        {{- if or (gt $count 0) $since }}
+          {{- $posts := (where site.RegularPages "Section" "in" site.Params.home.sections).ByDate.Reverse }}
+          {{- $latest := $posts }}
+          {{- $older := slice }}
+          {{- if $since }}
+            {{- $cutoff := time.AsTime $since }}
+            {{- $latest = where $posts "Date" "ge" $cutoff }}
+            {{- $older = where $posts "Date" "lt" $cutoff }}
+          {{- else }}
+            {{- $latest = first $count $posts }}
+          {{- end }}
+          {{- with $latest }}
             <h1>Latest posts</h1>
+            <div class="post-list">
+              {{ partial "post-list.html" . }}
+            </div>
+          {{- end }}
+          {{- with $older }}
+            <h1>Older posts</h1>
             <div class="post-list">
               {{ partial "post-list.html" . }}
             </div>

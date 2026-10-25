@@ -32,6 +32,55 @@ Now, besides the characteristics of the industry where checklists are best appli
 
 The IT industry is no stranger to the technique of checklists. More to follow…
 
+
+
+Using checklists in software dev
+
+Tuesday, November 20, 2018
+
+3:40 PM
+
+ 
+
+(just to finish up the already started post on the blog)
+
+Using checklists for:
+
+-   Especially in software development, we need checklists to ensure we don't forget anything
+
+-   Blog posts:
+
+    -   Implementing a task
+
+    -   Fixing a bug
+
+    -   Starting a project
+
+    -   Ending a project (Project handover)
+
+ 
+
+Define the checklist
+
+Explain the checklist (don't just give the checklist to someone, you need to explain it to the team)
+
+Willingness of people to follow the list (just defining the list and explaining it, is not enough)
+
+Enforcing the list (make sure that even though the people are willing to follow the checklist, the people might forget to apply it)
+
+ 
+
+The checklist needs to be integrated in the normal flow that the team does.
+
+The checklist must not be a distraction from the normal flow. If is a factor that creates disturbance, the checklist will slowly get less and less used, becoming useless.
+
+ 
+
+
+
+
+
+
 ## References
 
 - [Wikipedia article on Boeing Model 299 (B-17)](https://en.wikipedia.org/wiki/Boeing_B-17_Flying_Fortress)

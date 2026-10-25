@@ -1,0 +1,24 @@
+{{- /*
+Renders a random quote from data/quotes.toml. The site is static, so the
+random pick happens in the browser on every page load; the quote rendered at
+build time (day of the month mod number of quotes) is the fallback when
+JavaScript is unavailable.
+
+@example: {{< quote-of-the-day >}}
+*/ -}}
+{{- with hugo.Data.quotes.quotes }}
+  {{- $quote := index . (mod now.Day (len .)) }}
+  <figure class="quote-of-the-day">
+    <blockquote>{{ $quote.text }}</blockquote>
+    <figcaption>{{ $quote.author }}</figcaption>
+  </figure>
+  <script>
+    (function () {
+      var quotes = {{ . | jsonify | safeJS }};
+      var quote = quotes[Math.floor(Math.random() * quotes.length)];
+      var figure = document.currentScript.previousElementSibling;
+      figure.querySelector('blockquote').textContent = quote.text;
+      figure.querySelector('figcaption').textContent = quote.author;
+    })();
+  </script>
+{{- end }}

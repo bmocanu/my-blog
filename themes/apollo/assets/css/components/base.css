@@ -185,12 +185,34 @@ del {
 /* Home page hero block (used from content/_index.md) */
 .homepage-hero {
   text-align: center;
-  padding: 2rem 0;
+  padding: 0 0 2rem;
 }
 
 .homepage-hero-title {
   font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+.quote-of-the-day {
+  margin: 0 auto;
+  max-width: 52rem;
+}
+
+.quote-of-the-day blockquote {
+  border-left: 0;
+  padding-left: 0;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.quote-of-the-day figcaption {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #737373;
+}
+
+.quote-of-the-day figcaption::before {
+  content: "\2014\00a0";
 }
 
 .homepage-hero-subtitle {

@@ -22,7 +22,7 @@ theme = 'apollo'
   lastmod = ['updated', 'lastmod', 'modified']
 
 [pagination]
-  pagerSize = 7
+  pagerSize = 30
 
 [markup]
   [markup.goldmark]
@@ -60,13 +60,13 @@ theme = 'apollo'
     weight = 30
 
   [[menus.main]]
-    name = '/profile'
-    pageRef = '/profile'
+    name = '/tags'
+    pageRef = '/tags'
     weight = 40
 
   [[menus.main]]
-    name = '/tags'
-    pageRef = '/tags'
+    name = '/profile'
+    pageRef = '/profile'
     weight = 50
 
 # --- Theme parameters (defaults and docs: themes/apollo/hugo.toml) ---
@@ -81,7 +81,7 @@ theme = 'apollo'
   mathjax = false
 
   [params.home]
-    latestPosts = 5
+    latestSince = 2026-01-01
     sections = ['posts', 'homelab']
 
   [[params.socials]]

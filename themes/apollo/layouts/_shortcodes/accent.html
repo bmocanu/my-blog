@@ -1,0 +1,6 @@
+{{- /*
+Inline text in the site's accent (primary) color.
+
+@example: {{< accent >}}a few words{{< /accent >}}
+*/ -}}
+<span style="color: var(--primary-color)">{{ .Inner | .Page.RenderString }}</span>
