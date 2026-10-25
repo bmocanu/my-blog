@@ -45,6 +45,8 @@
         </div>
       </div>
 
+      {{ partial "series.html" (dict "page" . "mode" "list" "variant" "inline") }}
+
       {{- with .Params.tldr }}
         <div class="tldr">
           <strong>tl;dr:</strong>
@@ -55,10 +57,13 @@
       <section class="body">
         {{ .Content }}
       </section>
+
+      {{ partial "series.html" (dict "page" . "mode" "pager") }}
     </article>
   </main>
 {{ end }}
 
 {{ define "right" }}
   {{ partial "toc.html" . }}
+  {{ partial "series.html" (dict "page" . "mode" "list" "variant" "side") }}
 {{ end }}

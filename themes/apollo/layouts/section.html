@@ -7,10 +7,17 @@
     </div>
   {{ end }}
 
-  {{ $paginator := .Paginate .RegularPages }}
-  <main class="post-list">
-    {{ partial "post-list.html" $paginator.Pages }}
-  </main>
+  {{- /* A series (`series = true` in _index.md) lists its parts in reading order, not by date. */}}
+  {{ $pages := .RegularPages }}
+  {{- if .Params.series }}{{ $pages = .RegularPages.ByWeight }}{{ end }}
+  {{- if $pages }}
+    {{ $paginator := .Paginate $pages }}
+    <main class="post-list">
+      {{ partial "post-list.html" $paginator.Pages }}
+    </main>
 
-  {{ partial "pagination.html" $paginator }}
+    {{ partial "pagination.html" $paginator }}
+  {{- else }}
+    {{ partial "coming-soon.html" . }}
+  {{- end }}
 {{ end }}

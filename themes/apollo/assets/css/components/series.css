@@ -1,0 +1,93 @@
+.series-nav {
+  /* Undo the flex row that header.css gives every <nav>. */
+  display: block;
+  border-left: 3px solid var(--primary-color);
+  border-radius: 4px;
+  background-color: var(--note-content-bg);
+  margin: 1em 0;
+  padding: 10px 20px;
+
+  .series-heading {
+    font-weight: 700;
+  }
+
+  .series-position {
+    color: var(--text-1);
+    font-weight: 400;
+    margin-left: 0.5em;
+  }
+
+  ol {
+    margin: 0.5em 0 0;
+    padding-left: 1.5em;
+  }
+
+  li.current {
+    font-weight: 700;
+    color: var(--text-0);
+
+    &::marker {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+  }
+}
+
+/* Wide screens: the list lives in the right column; narrow screens: under the post title. */
+.series-nav.series-side {
+  display: none;
+  margin-top: 1.5em;
+  padding: 0 0 0 1em;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 0.9em;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+
+  .series-position {
+    display: block;
+    margin-left: 0;
+  }
+
+  li:not(.current),
+  li:not(.current) a {
+    color: var(--text-2);
+  }
+
+  li:not(.current) a:hover {
+    color: var(--hover-color);
+  }
+}
+
+.series-nav.series-inline {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.series-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border-color);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    max-width: 48%;
+  }
+
+  .series-next {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .series-pager-label {
+    color: var(--text-1);
+    font-size: 0.85em;
+  }
+}

@@ -22,6 +22,9 @@ See _partials/card.html.
   {{ $height := int (.Params.card_media_height | default 400) }}
   {{ $pages := .RegularPages }}
 
+  {{- if not $pages }}
+    {{ partial "coming-soon.html" . }}
+  {{- else }}
   <main>
     <div class="cards" style="--columns: {{ $columns }}">
       {{- /*
@@ -39,4 +42,5 @@ See _partials/card.html.
       {{- end }}
     </div>
   </main>
+  {{- end }}
 {{ end }}

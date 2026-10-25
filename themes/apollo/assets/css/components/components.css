@@ -31,3 +31,8 @@
     border: 1px solid var(--border-color);
   }
 }
+
+.coming-soon {
+  color: var(--text-1);
+  font-style: italic;
+}

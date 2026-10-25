@@ -1,0 +1,53 @@
+{{- /*
+Navigation for a series: a section whose _index.md sets `series = true`.
+The posts of the series are ordered by `weight` in their front matter.
+
+@context {dict} . `page` is the current page, `mode` is "list" (the box with every part of the
+series) or "pager" (previous / next links, shown after the post). For "list", `variant` is "side"
+(sidebar, wide screens) or "inline" (under the post title, narrow screens).
+
+@example: {{ partial "series.html" (dict "page" . "mode" "list" "variant" "side") }}
+*/}}
+{{- $page := .page }}
+{{- with $page.CurrentSection }}
+  {{- if and .Params.series (ne $page.Kind "section") }}
+    {{- $section := . }}
+    {{- $parts := .RegularPages.ByWeight }}
+    {{- $pos := 0 }}
+    {{- range $i, $p := $parts }}
+      {{- if eq $p $page }}{{ $pos = add $i 1 }}{{ end }}
+    {{- end }}
+    {{- if $pos }}
+      {{- if eq $.mode "list" }}
+<nav class="series-nav series-{{ $.variant | default "inline" }}" aria-label="Series">
+  <div class="series-heading">
+    <a href="{{ $section.RelPermalink }}">{{ $section.Title }}</a> series
+    <span class="series-position">Part {{ $pos }} of {{ len $parts }}</span>
+  </div>
+  <ol>
+    {{- range $parts }}
+      {{- if eq . $page }}
+    <li class="current" aria-current="page">{{ .Title }}</li>
+      {{- else }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end }}
+    {{- end }}
+  </ol>
+</nav>
+      {{- else if eq $.mode "pager" }}
+        {{- $prev := cond (gt $pos 1) (index $parts (sub $pos 2)) nil }}
+        {{- $next := cond (lt $pos (len $parts)) (index $parts $pos) nil }}
+<nav class="series-pager" aria-label="Series navigation">
+  {{- with $prev }}
+  <a class="series-prev" href="{{ .RelPermalink }}"><span class="series-pager-label">← Previous</span>{{ .Title }}</a>
+  {{- else }}
+  <span></span>
+  {{- end }}
+  {{- with $next }}
+  <a class="series-next" href="{{ .RelPermalink }}"><span class="series-pager-label">Next →</span>{{ .Title }}</a>
+  {{- end }}
+</nav>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
