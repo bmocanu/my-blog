@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Networking on Bogdan Mocanu</title>
+		<link>http://localhost:1313/tags/networking/</link>
+		<description>Recent content in Networking on Bogdan Mocanu</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Sample: Network Layout and VLANs</title>
+				<link>http://localhost:1313/homelab/sample-network-layout/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/homelab/sample-network-layout/</guid>
+				<description>&lt;h2 id=&#34;vlans&#34; id=&#34;vlans&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vlans&#34;&gt;VLANs&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;graph TD&#xA;    R[Router] --&amp;gt; S[Switch]&#xA;    S --&amp;gt; L[LAN 10]&#xA;    S --&amp;gt; I[IoT 20]&#xA;    S --&amp;gt; G[Guest 30]&lt;/pre&gt;&#xA;&lt;h2 id=&#34;firewall-rules&#34; id=&#34;firewall-rules&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#firewall-rules&#34;&gt;Firewall rules&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;IoT cannot reach LAN.&lt;/li&gt;&#xA;&lt;li&gt;Guest only gets internet.&lt;/li&gt;&#xA;&lt;li&gt;LAN can reach everything.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
+	</channel>
+</rss>

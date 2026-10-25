@@ -1,0 +1,102 @@
+baseURL = 'https://bogdan.mocanu.ws/'
+locale = 'en-US'
+title = 'Bogdan Mocanu'
+theme = 'apollo'
+
+# --- Settings a theme cannot provide (see themes/apollo/README.md) ---
+
+# Only the "tags" taxonomy (no categories).
+[taxonomies]
+  tag = 'tags'
+
+# The home page also emits the JSON index that powers the search modal.
+[outputs]
+  home = ['html', 'rss', 'json']
+
+[pagination]
+  pagerSize = 7
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Needed for the raw HTML (e.g. the hero block) used in content files.
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$'], ['\[', '\]']]
+          inline = [['$', '$'], ['\(', '\)']]
+  [markup.highlight]
+    # Colors come from the theme's syntax-light.css and syntax-dark.css.
+    noClasses = false
+    guessSyntax = false
+    lineNumbersInTable = false
+
+# --- Menu ---
+
+[menus]
+  [[menus.main]]
+    name = '/posts'
+    pageRef = '/posts'
+    weight = 10
+
+  [[menus.main]]
+    name = '/projects'
+    pageRef = '/projects'
+    weight = 20
+
+  [[menus.main]]
+    name = '/homelab'
+    pageRef = '/homelab'
+    weight = 30
+
+  [[menus.main]]
+    name = '/profile'
+    pageRef = '/profile'
+    weight = 40
+
+  [[menus.main]]
+    name = '/tags'
+    pageRef = '/tags'
+    weight = 50
+
+# --- Theme parameters (defaults and docs: themes/apollo/hugo.toml) ---
+
+[params]
+  description = 'Personal site and blog of Bogdan Mocanu, software engineer and tech enthusiast'
+  theme = 'toggle' # light, dark, auto, toggle, toggle-auto
+  toc = true
+  search = true
+  fancyCode = true
+  dynamicNote = true
+  mathjax = false
+
+  [params.home]
+    latestPosts = 5
+    sections = ['posts', 'homelab']
+
+  [[params.socials]]
+    name = 'x/twitter'
+    url = 'https://x.com/bmocanu'
+    icon = 'x-twitter'
+
+  [[params.socials]]
+    name = 'bluesky'
+    url = 'https://bsky.app/profile/bmocanu.bsky.social'
+    icon = 'bluesky'
+
+  [[params.socials]]
+    name = 'linkedin'
+    url = 'https://www.linkedin.com/in/bmocanu'
+    icon = 'linkedin'
+
+  [[params.socials]]
+    name = 'substack'
+    url = 'https://substack.com/@bmocanu'
+    icon = 'substack'
+
+  [[params.socials]]
+    name = 'github'
+    url = 'https://github.com/bmocanu'
+    icon = 'github'
