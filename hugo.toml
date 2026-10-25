@@ -13,6 +13,11 @@ theme = 'apollo'
 [outputs]
   home = ['html', 'rss', 'json']
 
+# Front matter keys for the post dates: `published` and the optional `updated`.
+[frontmatter]
+  date = ['date', 'publishDate', 'pubDate', 'published']
+  lastmod = ['updated', 'lastmod', 'modified']
+
 [pagination]
   pagerSize = 7
 
