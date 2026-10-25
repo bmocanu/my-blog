@@ -1,0 +1,10 @@
+{{- /*
+Renders a big page title.
+
+@context {string} . The title. Nothing is rendered when it is empty.
+
+@example: {{ partial "page-header.html" .Title }}
+*/}}
+{{- with . }}
+<div class="page-header">{{ . }}</div>
+{{- end }}

@@ -1,0 +1,32 @@
+/* Processed with resources.ExecuteAsTemplate so the URLs honour baseURL. */
+@font-face {
+  font-family: "Jetbrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("{{ "fonts/JetbrainsMono/JetBrainsMono-Regular.ttf" | relURL }}");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jetbrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("{{ "fonts/JetbrainsMono/JetBrainsMono-Bold.ttf" | relURL }}");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZedTextFtl";
+  src: url("{{ "fonts/zed-fonts/ZedTextL-Regular.woff2" | relURL }}") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZedTextFtl";
+  src: url("{{ "fonts/zed-fonts/ZedTextL-Bold.woff2" | relURL }}") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,133 @@
+/* Language label colors (set by codeblock.js: .code-label.label-<lang>) */
+.code-label {
+  --lang-color: #333;
+  background: var(--lang-color);
+  color: var(--label-color);
+  border-radius: 0 0 0.25rem 0.25rem;
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  text-align: right;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 0.1rem;
+}
+
+.label-js,
+.label-javascript { --lang-color: #f7df1e; }
+.label-yaml,
+.label-yml { --lang-color: #f71e6a; }
+.label-shell,
+.label-sh,
+.label-bash,
+.label-zsh { --lang-color: #4eaa25; }
+.label-json { --lang-color: dodgerblue; }
+.label-python,
+.label-py { --lang-color: #3572a5; }
+.label-css { --lang-color: #264de4; }
+.label-go,
+.label-golang { --lang-color: #00add8; }
+.label-markdown,
+.label-md { --lang-color: #0000ff; }
+.label-rust,
+.label-rs { --lang-color: #ff4647; }
+.label-java { --lang-color: #f89820; }
+.label-csharp,
+.label-cs { --lang-color: #178600; }
+.label-ruby,
+.label-rb { --lang-color: #701516; }
+.label-swift { --lang-color: #f05138; }
+.label-php { --lang-color: #777bb4; }
+.label-typescript,
+.label-ts { --lang-color: #3178c6; }
+.label-scala { --lang-color: #c22d40; }
+.label-kotlin { --lang-color: #f18e33; }
+.label-lua { --lang-color: #000080; }
+.label-perl { --lang-color: #0298c3; }
+.label-haskell { --lang-color: #5e5086; }
+.label-r { --lang-color: #198ce7; }
+.label-dart { --lang-color: #00d2b8; }
+.label-elixir { --lang-color: #6e4a7e; }
+.label-clojure { --lang-color: #5881d8; }
+/* Languages the Zola theme did not know about */
+.label-toml { --lang-color: #9c4221; }
+.label-html { --lang-color: #e34c26; }
+.label-sql { --lang-color: #e38c00; }
+.label-docker,
+.label-dockerfile { --lang-color: #384d54; }
+.label-c { --lang-color: #555555; }
+.label-cpp { --lang-color: #f34b7d; }
+.label-powershell { --lang-color: #012456; }
+.label-nginx { --lang-color: #009639; }
+
+code {
+  background-color: var(--bg-primary);
+  padding: 0.1em 0.2em;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  font-family: var(--code-font);
+}
+
+pre {
+  background-color: var(--bg-primary) !important;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  line-height: 1.4;
+  overflow-x: auto;
+  padding: 1em;
+  position: relative;
+
+  code {
+    background-color: transparent !important;
+    color: var(--text-color);
+    font-size: 100%;
+    padding: 0;
+    border: none;
+    font-family: var(--code-font);
+  }
+}
+
+/* Highlighted blocks: every line has its own padding so that highlighted lines span the full width. */
+pre.chroma {
+  padding-left: 0;
+  padding-right: 0;
+
+  code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .line {
+    padding: 0 1em;
+    min-height: 1lh;
+  }
+
+  .line.hl {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .ln {
+    display: inline-block;
+    -webkit-user-select: none;
+    user-select: none;
+    min-width: 1ch;
+    margin-right: 2ch;
+    opacity: 0.8;
+  }
+}
+
+.clipboard-button,
+.clipboard-button svg {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  fill: var(--text-color);
+}

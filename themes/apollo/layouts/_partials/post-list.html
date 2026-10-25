@@ -1,0 +1,42 @@
+{{- /*
+Renders a list of pages as "date # title" rows.
+
+@context {page.Pages} . The pages to list.
+
+@example: {{ partial "post-list.html" .Pages }}
+*/}}
+<ul>
+  {{- range . }}
+  {{- $url := or .Params.link_to .RelPermalink }}
+  {{- $description := "" }}
+  {{- with .Description }}
+    {{- $description = . }}
+  {{- else }}
+    {{- /* Only an explicit summary (`summary` front matter or <!--more-->) is shown, never an auto-generated one. */}}
+    {{- if or .Params.summary (strings.Contains .RawContent "<!--more-->") }}
+      {{- $description = printf "%s…" (.Summary | plainify | htmlUnescape) }}
+    {{- end }}
+  {{- end }}
+  <li class="list-item">
+    <section>
+      <div class="post-header">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+
+        <div>
+          <h1 class="title">
+            <a href="{{ $url }}">{{ .Title }}{{ if .Params.link_to }} ↗{{ end }}</a>
+            {{- if .Draft }}<span class="draft-label">DRAFT</span>{{ end }}
+          </h1>
+
+          {{- if $description }}
+          <div class="meta">
+            <div class="description">{{ $description }}</div>
+            <a class="readmore" href="{{ $url }}">{{ if .Params.link_to }}Read original ⟶{{ else }}Read more ⟶{{ end }}</a>
+          </div>
+          {{- end }}
+        </div>
+      </div>
+    </section>
+  </li>
+  {{- end }}
+</ul>

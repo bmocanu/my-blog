@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}" class="light">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "hooks/body-start.html" . }}
+  <div class="left-content">
+    {{ block "left" . }}{{ end }}
+  </div>
+
+  <div class="content">
+    {{ partial "nav.html" . }}
+    {{ block "main" . }}{{ end }}
+  </div>
+
+  <div class="right-content">
+    {{ block "right" . }}{{ end }}
+  </div>
+
+  {{/* Set by the mermaid code block render hook while rendering the content above. */}}
+  {{ if .Store.Get "hasMermaid" }}
+    {{ partial "mermaid.html" . }}
+  {{ end }}
+  {{ partial "hooks/body-end.html" . }}
+</body>
+</html>

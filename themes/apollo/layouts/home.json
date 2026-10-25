@@ -1,0 +1,12 @@
+{{- /* Search index (/index.json), read by assets/js/search.js. */ -}}
+{{- $docs := slice }}
+{{- range site.RegularPages }}
+  {{- $content := .Plain | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+  {{- $docs = $docs | append (dict
+    "title" .Title
+    "description" .Description
+    "url" .RelPermalink
+    "content" $content
+  ) }}
+{{- end }}
+{{- $docs | jsonify }}

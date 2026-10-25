@@ -1,0 +1,21 @@
+{{- with resources.Get "js/main.js" }}
+  {{- $opts := dict
+    "minify" (cond hugo.IsDevelopment false true)
+    "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+    "params" (dict
+      "fancyCode" site.Params.fancyCode
+      "dynamicNote" site.Params.dynamicNote
+      "search" site.Params.search
+      "toc" site.Params.toc
+    )
+  }}
+  {{- with . | js.Build $opts }}
+    {{- if hugo.IsDevelopment }}
+<script defer src="{{ .RelPermalink }}"></script>
+    {{- else }}
+      {{- with . | fingerprint }}
+<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

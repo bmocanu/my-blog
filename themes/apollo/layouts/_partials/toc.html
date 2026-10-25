@@ -1,0 +1,32 @@
+{{- /*
+Table of contents, shown in the right column of pages that have headings.
+Turn it off for the whole site with `toc = false` in the params, or per page in the front matter.
+
+It is built from .Fragments.Headings (not .TableOfContents), so the top level is the first heading
+level the page actually uses, whatever it is. Headings deeper than h3 are left out.
+*/}}
+{{- define "_partials/inline/toc/list.html" }}
+<ul>
+  {{- range .headings }}
+    {{- if le .Level 3 }}
+  <li>
+    <a href="#{{ .ID }}">{{ .Title | safeHTML }}</a>
+    {{- with .Headings }}
+      {{- partial "inline/toc/list.html" (dict "headings" .) }}
+    {{- end }}
+  </li>
+    {{- end }}
+  {{- end }}
+</ul>
+{{- end }}
+
+{{- $enabled := site.Params.toc }}
+{{- if isset .Params "toc" }}
+  {{- $enabled = .Params.toc }}
+{{- end }}
+{{- if and $enabled .Fragments.Headings }}
+<div class="toc">
+  <div class="heading">Table of Contents</div>
+  {{ partial "inline/toc/list.html" (dict "headings" .Fragments.Headings) }}
+</div>
+{{- end }}

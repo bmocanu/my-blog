@@ -1,0 +1,30 @@
+{{- /*
+A highlighted note, optionally collapsible.
+
+@param {string} [header] Markdown for the header line.
+@param {bool} [clickable] Turn the header into a toggle button.
+@param {bool} [hidden] With clickable: start collapsed.
+@param {bool} [center] Center the header text instead of showing the pencil icon.
+
+@example: {{< note header="Heads up" clickable=true hidden=true >}}The *body* is markdown.{{< /note >}}
+*/ -}}
+{{- $header := .Get "header" | default "" | .Page.RenderString }}
+{{- $center := .Get "center" }}
+{{- $headerClass := cond $center "note-center" "note-icon" }}
+<div class="note-container">
+  {{- if .Get "clickable" }}
+  <button class="note-toggle">
+    <div class="{{ $headerClass }}">{{ $header }}</div>
+  </button>
+  <div class="note-content" style="display: {{ cond (.Get "hidden") "none" "block" }};">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+  {{- else }}
+  <div class="note-header">
+    <div class="{{ $headerClass }}">{{ $header }}</div>
+  </div>
+  <div class="note-content">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+  {{- end }}
+</div>

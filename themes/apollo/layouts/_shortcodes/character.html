@@ -1,0 +1,29 @@
+{{- /*
+A comment bubble with a character next to it.
+
+@param {string} [name] Character name (default "hooded"). Without an image it is shown as text.
+@param {string} [type] CSS modifier, e.g. "comment" (default).
+@param {string} [position] "right" (default) or "left".
+@param {string} [image] File in static/images/characters/ to use as the avatar.
+
+@example: {{< character name="hooded" position="left" >}}Markdown *body*{{< /character >}}
+*/ -}}
+{{- $name := .Get "name" | default "hooded" }}
+{{- $type := .Get "type" | default "comment" }}
+{{- $position := .Get "position" | default "right" }}
+{{- $image := .Get "image" }}
+{{- if and (not $image) (eq $name "hooded") }}{{ $image = "hooded.png" }}{{ end }}
+<div class="character-note character-{{ $name }} character-{{ $type }} character-{{ $position }}">
+  <div class="character-avatar">
+    {{- if $image }}
+    <img src="{{ printf "images/characters/%s" $image | relURL }}" alt="{{ $name }}" width="80" height="80">
+    {{- else }}
+    {{ $name }}
+    {{- end }}
+  </div>
+  <div class="character-content">
+    <div class="character-bubble">
+      {{ .Inner | .Page.RenderString (dict "display" "block") }}
+    </div>
+  </div>
+</div>

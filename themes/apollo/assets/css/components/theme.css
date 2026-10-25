@@ -1,0 +1,64 @@
+:root {
+  /* Fonts */
+  --font-size-base: 16px;
+  --mono-text-font: "Jetbrains Mono", monospace;
+  --text-font: "ZedTextFtl", sans-serif;
+  --header-font: var(--text-font);
+  --code-font: "Jetbrains Mono", monospace;
+
+  --line-height: 1.5;
+  --page-width: 920px;
+
+  --bg-primary: var(--bg-1);
+  --text-color: var(--text-0);
+  --label-color: #f0f0f0;
+
+  --note-header-bg: var(--bg-2);
+  --note-header-color: var(--text-0);
+  --note-content-bg: var(--bg-1);
+}
+
+:root.light {
+  --text-0: #212121;
+  --text-1: #666;
+  --text-2: #b3b3b3;
+
+  --bg-0: #fff;
+  --bg-1: #fafafa;
+  --bg-2: #ededed;
+
+  --border-color: var(--bg-2);
+
+  --primary-color: #ef5350;
+  --hover-color: white;
+
+  --icon-filter: none;
+
+  color-scheme: light;
+}
+
+/* Dark theme needs a bigger contrast compared to the light theme. */
+:root.dark {
+  --text-0: #f0f0f0;
+  --text-1: #ababab;
+  --text-2: #787878;
+
+  --bg-0: #121212;
+  --bg-1: #1f1f1f;
+  --bg-2: #383838;
+
+  --border-color: var(--bg-2);
+
+  --primary-color: #ef5350;
+  --hover-color: white;
+
+  --icon-filter: invert(1);
+
+  color-scheme: dark;
+
+  .social > img,
+  .search-button > img,
+  #dark-mode-toggle > img {
+    filter: invert(1);
+  }
+}

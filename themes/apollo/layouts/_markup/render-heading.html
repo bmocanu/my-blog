@@ -1,0 +1,2 @@
+{{- /* The heading text is the anchor link (like Zola's insert_anchor_links = "heading"). */ -}}
+<h{{ .Level }} id="{{ .Anchor }}"{{ range $k, $v := .Attributes }}{{ if $v }} {{ printf "%s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr }}{{ end }}{{ end }}><a class="anchor" href="#{{ .Anchor }}">{{ .Text | safeHTML }}</a></h{{ .Level }}>

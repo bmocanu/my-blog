@@ -1,0 +1,19 @@
+{{ define "main" }}
+  {{ partial "page-header.html" .Title }}
+
+  <main class="tag-list">
+    <ul>
+      {{- /* Most used terms first. */}}
+      {{- range .Data.Terms.ByCount }}
+      <li>
+        <div class="post-header">
+          <h1 class="title">
+            <a href="{{ .Page.RelPermalink }}">{{ .Term }}</a>
+          </h1>
+          <small class="meta">{{ .Count }} page{{ if ne .Count 1 }}s{{ end }}</small>
+        </div>
+      </li>
+      {{- end }}
+    </ul>
+  </main>
+{{ end }}

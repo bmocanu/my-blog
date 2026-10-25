@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <main>
+    <article>
+      <section class="body">
+        {{- /* Only a title written in the front matter is shown (not the site title fallback). */}}
+        {{ partial "page-header.html" .Params.title }}
+        {{ .Content }}
+
+        {{- $count := int site.Params.home.latestPosts }}
+        {{- if gt $count 0 }}
+          {{- $posts := where site.RegularPages "Section" "in" site.Params.home.sections }}
+          {{- with first $count $posts.ByDate.Reverse }}
+            <h1>Latest posts</h1>
+            <div class="post-list">
+              {{ partial "post-list.html" . }}
+            </div>
+          {{- end }}
+        {{- end }}
+      </section>
+    </article>
+  </main>
+{{ end }}

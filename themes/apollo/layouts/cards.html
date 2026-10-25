@@ -1,0 +1,42 @@
+{{- /*
+Project cards, all on one page. Use it for a section with `layout = "cards"` in its _index.md.
+
+Section params:
+  cards_columns      number of columns (default 2)
+  card_media_height  height in px the card images are resized to (default 400)
+
+Page params (projects): image, video, github, demo, links, link_to, tags
+See _partials/card.html.
+*/}}
+{{ define "main" }}
+  {{ partial "page-header.html" .Title }}
+
+  {{ with .Content }}
+    <div class="section-content">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ $section := . }}
+  {{ $columns := int (.Params.cards_columns | default 2) }}
+  {{ $height := int (.Params.card_media_height | default 400) }}
+  {{ $pages := .RegularPages }}
+
+  <main>
+    <div class="cards" style="--columns: {{ $columns }}">
+      {{- /*
+        The cards flow top to bottom, then into the next column. To read them row by row
+        (1 2 / 3 4 / 5 6), they are emitted column by column: 1 3 5 2 4 6.
+      */}}
+      {{- $perColumn := div (add (len $pages) (sub $columns 1)) $columns }}
+      {{- range $col := seq 0 (sub $columns 1) }}
+        {{- range $row := seq 0 (sub $perColumn 1) }}
+          {{- $idx := add (mul $row $columns) $col }}
+          {{- if lt $idx (len $pages) }}
+            {{- partial "card.html" (dict "page" (index $pages $idx) "section" $section "height" $height "order" $idx) }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </div>
+  </main>
+{{ end }}

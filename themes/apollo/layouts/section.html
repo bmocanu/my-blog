@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ partial "page-header.html" .Title }}
+
+  {{ with .Content }}
+    <div class="section-content">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .RegularPages }}
+  <main class="post-list">
+    {{ partial "post-list.html" $paginator.Pages }}
+  </main>
+
+  {{ partial "pagination.html" $paginator }}
+{{ end }}

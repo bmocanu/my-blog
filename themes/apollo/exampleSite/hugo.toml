@@ -1,0 +1,87 @@
+# Run the demo from the theme folder:
+#   hugo server --source themes/apollo/exampleSite
+baseURL = 'https://example.org/'
+locale = 'en-US'
+title = 'Apollo'
+theme = 'apollo'
+themesDir = '../..'
+
+# Settings a theme cannot provide (see the theme README)
+
+# Only the "tags" taxonomy (no categories).
+[taxonomies]
+  tag = 'tags'
+
+# The home page also emits the JSON index that powers the search modal.
+[outputs]
+  home = ['html', 'rss', 'json']
+
+[pagination]
+  pagerSize = 3 # tiny, so that the pagination links show up with the demo posts
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Needed for the raw HTML (e.g. the hero block) used in content files.
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$'], ['\[', '\]']]
+          inline = [['$', '$'], ['\(', '\)']]
+  [markup.highlight]
+    # Colors come from the theme's syntax-light.css and syntax-dark.css.
+    noClasses = false
+    guessSyntax = false
+    lineNumbersInTable = false
+
+[menus]
+  [[menus.main]]
+    name = '/posts'
+    pageRef = '/posts'
+    weight = 10
+
+  [[menus.main]]
+    name = '/projects'
+    pageRef = '/projects'
+    weight = 20
+
+  [[menus.main]]
+    name = '/homelab'
+    pageRef = '/homelab'
+    weight = 30
+
+  [[menus.main]]
+    name = '/profile'
+    pageRef = '/profile'
+    weight = 40
+
+  [[menus.main]]
+    name = '/tags'
+    pageRef = '/tags'
+    weight = 50
+
+[params]
+  description = 'Demo site for the Apollo theme'
+  theme = 'toggle' # light, dark, auto, toggle, toggle-auto
+  mathjax = false
+
+  [params.home]
+    latestPosts = 5
+    sections = ['posts', 'homelab']
+
+  [[params.socials]]
+    name = 'github'
+    url = 'https://github.com/'
+    icon = 'github'
+
+  [[params.socials]]
+    name = 'mastodon'
+    url = 'https://mastodon.social/'
+    icon = 'mastodon'
+
+  [[params.socials]]
+    name = 'rss'
+    url = '/index.xml'
+    icon = 'rss'

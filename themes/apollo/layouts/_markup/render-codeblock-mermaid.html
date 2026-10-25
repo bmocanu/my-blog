@@ -1,0 +1,3 @@
+{{- /* ```mermaid fenced blocks. baseof.html loads mermaid when this was used on the page. */ -}}
+<pre class="mermaid">{{ .Inner | htmlEscape | safeHTML }}</pre>
+{{- .Page.Store.Set "hasMermaid" true }}

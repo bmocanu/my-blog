@@ -1,0 +1,198 @@
+html {
+  background-color: var(--bg-0);
+  color: var(--text-0);
+  font-family: var(--text-font);
+  line-height: var(--line-height);
+
+  @media (max-width: 992px) {
+    font-size: calc(var(--font-size-base) * 0.97);
+  }
+  @media (max-width: 768px) {
+    font-size: calc(var(--font-size-base) * 0.95);
+  }
+  @media (max-width: 576px) {
+    font-size: calc(var(--font-size-base) * 0.92);
+  }
+}
+
+body {
+  display: flex;
+  flex-grow: 1;
+  padding: 0.9rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: calc(100vh - 150px);
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .content {
+    width: 100%;
+    max-width: var(--page-width);
+    flex-shrink: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+  }
+
+  .left-content {
+    width: 100%;
+
+    @media (min-width: 992px) {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+  }
+
+  .right-content {
+    width: 100%;
+
+    @media (min-width: 992px) {
+      flex: 1 1 0;
+      min-width: 0;
+
+      /* Keep the sticky behaviour here, it does not work on the TOC itself. */
+      position: sticky;
+      top: 60px;
+      padding: 1em;
+      overflow-y: auto;
+      max-height: calc(100vh - 100px);
+    }
+  }
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: var(--hover-color);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--primary-color);
+  color: var(--hover-color);
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.draft-label {
+  color: var(--hover-color);
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 6px;
+  background-color: var(--primary-color);
+}
+
+hr {
+  color: var(--border-color);
+  background: none;
+  margin: 1.2rem auto;
+}
+
+blockquote {
+  border-left: 3px solid var(--primary-color);
+  color: #737373;
+  margin: 0;
+  padding-left: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  /* use colored hovering */
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--hover-color);
+  }
+
+  /* hover link with child elements (e.g. code) */
+  &:hover > code {
+    background-color: var(--primary-color);
+    color: var(--hover-color);
+
+    /* disable the border + vertical padding */
+    border: none;
+    padding: 0 0.2em;
+  }
+}
+
+/* Only have colored links inside the text */
+main {
+  a {
+    border-bottom: 2px solid var(--primary-color);
+
+    /* Make sure the underline is at the top */
+    position: relative; /* needed for z-index */
+    z-index: 1;
+  }
+
+  /* No colored underline in the meta line, the project cards and heading anchors. */
+  .meta a,
+  .cards a,
+  a.anchor {
+    border-bottom: none;
+  }
+}
+
+time {
+  color: var(--text-1);
+}
+
+/* change the line-through color */
+del {
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 3px;
+}
+
+.MathJax_Display,
+.MJXc-display,
+.MathJax_SVG_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Taxonomies for a post */
+.tags a::before {
+  content: "#";
+  display: inline;
+  white-space: nowrap !important;
+}
+
+.mermaid {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+/* Pagination under the post lists */
+.pagination {
+  .page-item {
+    margin-right: 1rem;
+  }
+}
+
+/* Home page hero block (used from content/_index.md) */
+.homepage-hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.homepage-hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.homepage-hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <div class="page-header">Entries tagged :: {{ .Data.Term }}</div>
+
+  <main class="post-list">
+    {{ partial "post-list.html" .Pages }}
+  </main>
+{{ end }}

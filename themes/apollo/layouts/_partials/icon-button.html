@@ -1,0 +1,23 @@
+{{- /*
+Small bordered button with an optional icon.
+
+@context {string} href The link target.
+@context {string} text The label.
+@context {string} [icon] File name (without .svg) of an icon.
+@context {string} [icon_path] Folder of the icon, relative to the site root. Default: icons/social/
+@context {bool} [disabled] Render a <span> instead of a link.
+
+@example: {{ partial "icon-button.html" (dict "href" "https://github.com" "text" "GitHub" "icon" "github") }}
+*/}}
+{{- $icon_path := .icon_path | default "icons/social/" }}
+{{- if .disabled }}
+<span class="icon-button disabled" aria-disabled="true">
+  {{- with .icon }}<img src="{{ printf "%s%s.svg" $icon_path . | relURL }}" alt="{{ . }}">{{ end }}
+  {{ .text }}
+</span>
+{{- else }}
+<a href="{{ .href }}" class="icon-button" target="_blank" rel="noopener">
+  {{- with .icon }}<img src="{{ printf "%s%s.svg" $icon_path . | relURL }}" alt="{{ . }}">{{ end }}
+  {{ .text }}
+</a>
+{{- end }}

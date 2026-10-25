@@ -1,0 +1,19 @@
+{{- /*
+Previous / next links for a paginated list.
+
+@context {page.Pager} . The pager returned by .Paginate.
+*/}}
+{{- if gt .TotalPages 1 }}
+<ul class="pagination">
+  {{- if .HasPrev }}
+  <span class="page-item page-prev">
+    <a href="{{ .Prev.URL }}" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+  </span>
+  {{- end }}
+  {{- if .HasNext }}
+  <span class="page-item page-next">
+    <a href="{{ .Next.URL }}" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+  </span>
+  {{- end }}
+</ul>
+{{- end }}

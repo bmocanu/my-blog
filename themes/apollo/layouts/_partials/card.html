@@ -1,0 +1,97 @@
+{{- /*
+A project card.
+
+@context {page} page The project page.
+@context {page} section The section the card is listed in; its folder is also searched for the media files.
+@context {int} height Height (px) the card image is resized to.
+@context {int} order Position of the card in the section, to restore the order on the single-column layout.
+*/}}
+{{- $page := .page }}
+{{- $section := .section }}
+{{- $height := .height }}
+
+{{- /*
+Turns the `image` / `video` param into a URL: a remote URL is used as is, otherwise the file is
+looked up in the page bundle, then next to the section's _index.md, then in the assets folder
+and finally in the static folder. Images are resized to the card height.
+*/}}
+{{- define "_partials/inline/card/src.html" }}
+  {{- $name := .name }}
+  {{- $src := "" }}
+  {{- if hasPrefix $name "http" }}
+    {{- $src = $name }}
+  {{- else }}
+    {{- $res := .page.Resources.Get $name }}
+    {{- if not $res }}{{ $res = .section.Resources.Get $name }}{{ end }}
+    {{- if not $res }}{{ $res = resources.Get $name }}{{ end }}
+    {{- if $res }}
+      {{- if and .height (eq $res.ResourceType "image") }}
+        {{- $res = $res.Resize (printf "x%d webp" .height) }}
+      {{- end }}
+      {{- $src = $res.RelPermalink }}
+    {{- else }}
+      {{- $src = $name | relURL }}
+    {{- end }}
+  {{- end }}
+  {{- return $src }}
+{{- end }}
+
+<div class="card" style="--order: {{ .order }}">
+  {{- if or $page.Params.image $page.Params.video }}
+  <div class="card-media">
+    {{- if $page.Params.image }}
+      {{- $src := partial "inline/card/src.html" (dict "page" $page "section" $section "name" $page.Params.image "height" $height) }}
+    <img class="card-image" alt="{{ $page.Title }}" src="{{ $src }}" loading="lazy">
+    {{- else }}
+      {{- $src := partial "inline/card/src.html" (dict "page" $page "section" $section "name" $page.Params.video "height" 0) }}
+    <video class="card-video" controls loop muted>
+      <source src="{{ $src }}">
+    </video>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  <div class="card-content">
+    <h1 class="card-title">
+      {{- if $page.Params.link_to }}
+      <a href="{{ $page.Params.link_to }}">{{ $page.Title }}</a>
+      {{- else if $page.Content }}
+      <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+      {{- else }}
+      {{ $page.Title }}
+      {{- end }}
+    </h1>
+
+    {{- with $page.Description }}
+    <p class="card-tagline">{{ . }}</p>
+    {{- end }}
+
+    {{- $tags := $page.Params.tags }}
+    {{- $hasLinks := or $page.Params.github $page.Params.demo $page.Params.links }}
+    {{- if or $hasLinks $tags }}
+    <div class="card-footer">
+      {{- if $hasLinks }}
+      <div class="card-links">
+        {{- with $page.Params.github }}
+          {{- partial "icon-button.html" (dict "href" . "text" "GitHub" "icon" "github") }}
+        {{- end }}
+        {{- with $page.Params.demo }}
+          {{- partial "icon-button.html" (dict "href" . "text" "Demo" "icon" "globe") }}
+        {{- end }}
+        {{- range $page.Params.links }}
+          {{- partial "icon-button.html" (dict "href" .url "text" .text "icon" (.icon | default "")) }}
+        {{- end }}
+      </div>
+      {{- end }}
+
+      {{- with $tags }}
+      <div class="card-tags">
+        {{- range first 4 (sort .) }}
+        <span class="card-tag">#{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</div>

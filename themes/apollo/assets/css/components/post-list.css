@@ -1,0 +1,51 @@
+.post-list,
+.tag-list {
+  > ul {
+    margin: 0;
+    padding: 1rem 0 0 0;
+  }
+
+  .list-item {
+    margin-bottom: 0.5rem;
+    list-style-type: none;
+  }
+
+  /* Tag list rows are tighter than the post rows */
+  > ul > li {
+    list-style-type: none;
+  }
+
+  .post-header {
+    display: grid;
+    /* Date on the first line of the title, even when a description makes the row taller. */
+    align-items: baseline;
+
+    @media all and (max-width: 640px) {
+      grid-template-rows: auto 1fr;
+    }
+    @media all and (min-width: 640px) {
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+    }
+
+    @media only screen and (max-width: 640px) {
+      margin: 1.6rem 0px;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: normal;
+      font-family: var(--header-font);
+
+      a {
+        border-bottom: none;
+      }
+    }
+
+    time {
+      font-family: var(--mono-text-font);
+      text-align: left;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+# Theme defaults. Hugo only merges `params`, `menus` and `languages` from a theme's config,
+# so the site's own hugo.toml must also contain the `taxonomies`, `outputs`, `pagination` and
+# `markup` settings listed in the README. Override any of the params below there.
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.146.0'
+
+[params]
+  # Color scheme: light, dark, auto (follow the OS), toggle (light/dark button)
+  # or toggle-auto (light/dark/auto button).
+  theme = 'toggle'
+  description = ''
+
+  # Right-hand table of contents on pages that have headings.
+  toc = true
+  # Search button + Ctrl/Cmd+K modal (reads /index.json).
+  search = true
+  # Language label and copy button on code blocks.
+  fancyCode = true
+  # Load MathJax on every page (or set `mathjax = true` in a page's front matter).
+  mathjax = false
+  # Collapsible notes (clickable `note` shortcode).
+  dynamicNote = true
+  # Show the word count in the post meta line.
+  wordCount = false
+
+  # Latest posts block rendered below the home page content (0 disables it).
+  [params.home]
+    latestPosts = 5
+    sections = ['posts']
+
+  # Optional: link to the page source in the post meta line
+  #   repoURL = 'https://github.com/example/site/tree/main/content/'
+  #   repoView = true
+  #
+  # Optional: logo image (file in static/) shown instead of the site title
+  #   logo = 'logo.svg'
+  #
+  # [[params.socials]]
+  #   name = 'github'
+  #   url = 'https://github.com/example'
+  #   icon = 'github'      # any file name from static/icons/social (without .svg)

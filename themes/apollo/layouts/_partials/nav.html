@@ -1,0 +1,60 @@
+{{- $theme := site.Params.theme | default "toggle" }}
+<nav>
+  <div class="left-nav">
+    {{- with site.Params.logo }}
+    <a href="{{ site.Home.RelPermalink }}" class="logo">
+      <img alt="{{ site.Title }}" src="{{ . | relURL }}">
+    </a>
+    {{- else }}
+    <a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+    {{- end }}
+
+    <div class="socials">
+      {{- range site.Params.socials }}
+      <a rel="me" href="{{ .url }}" class="social">
+        <img alt="{{ .name }}" src="{{ printf "icons/social/%s.svg" .icon | relURL }}">
+      </a>
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="right-nav">
+    {{- range site.Menus.main }}
+    <a href="{{ .URL }}" class="menu-link">{{ .Name }}</a>
+    {{- end }}
+
+    {{- if site.Params.search }}
+    <button id="search-button" class="search-button" title="$SHORTCUT to open search">
+      <img src="{{ "icons/search.svg" | relURL }}" alt="Search" class="search-icon">
+    </button>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle" data-index="{{ "index.json" | relURL }}">
+      <div id="modal-content">
+        <h1 id="modalTitle" class="page-header">Search</h1>
+        <div id="searchBar">
+          <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search...">
+          <button id="clear-search" class="clear-button" title="Clear search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+          </button>
+        </div>
+        <div id="results-container">
+          <div id="results-info"></div>
+          <div id="results" role="listbox"></div>
+        </div>
+      </div>
+    </div>
+    {{- end }}
+
+    {{- if or (eq $theme "toggle") (eq $theme "toggle-auto") }}
+    <a id="dark-mode-toggle" href="#" role="button" aria-label="Toggle color scheme">
+      <img src="{{ "icons/sun.svg" | relURL }}" id="sun-icon" alt="Light">
+      <img src="{{ "icons/moon.svg" | relURL }}" id="moon-icon" alt="Dark">
+      {{- if eq $theme "toggle-auto" }}
+      <img src="{{ "icons/auto.svg" | relURL }}" id="auto-icon" alt="Auto">
+      {{- end }}
+    </a>
+    {{- end }}
+  </div>
+</nav>
