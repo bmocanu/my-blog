@@ -26,12 +26,16 @@ In {{< accent >}}2023{{< /accent >}} I switched markets and started developing p
 
 All content on this website is written by me (and, therefore, all mistakes are gloriously mine). 
 
-There is {{< accent >}}no Gen AI/LLM written content here{{< /accent >}}. 
-
 The following resources were used:
 - Site is built with [Hugo](https://gohugo.io/)
-- The theme is a translated version from [Apollo theme by not-matthias](https://github.com/not-matthias/apollo)
+- The theme is a translated version of [the Apollo theme by not-matthias](https://github.com/not-matthias/apollo)
 - The favicon uses [a feather icon](https://www.flaticon.com/free-icon/feather_11073658) created by [meaicon on Flaticon](https://www.flaticon.com/authors/meaicon)
+
+## AI usage
+
+There is {{< accent >}}no Gen AI written content here{{< /accent >}}. All wrriten content on this website is mine. 
+
+Gen AI was used for translating the Apollo theme from Zola (another site builder) to Hugo and tweaking Hugo's formatting blocks.
 
 ## Contact
 
