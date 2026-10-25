@@ -1,11 +1,17 @@
 ---
 title: "The Google Polymer project: revisiting the new browser-server model"
 published: 2018-02-15
+updated: 2026-10-25
+tags: [google, google polymer, new protocol]
 ---
+
+{{< note >}}
+I originally published this in 2018 and updated it today, for the new installment of this blog.
+{{< /note >}}
 
 At the end of 2008, I published a [two-part article](/posts/00006-from-the-past-the-need-for-a-new-client-server-web-model/) on the problems that I saw back then for the browser-server model (as I was calling it at that time), mainly a set of complaints and a set of possible solutions that I saw for the rigidity of the [HTTP 1.1](https://tools.ietf.org/html/rfc2068) and the static + stateless + document-based nature of the web applications.
 
-Well, it turns out that, almost 8 years after that article, I was quite right. Since then, several steps have been taken towards making the life of the developers easier and the experience of the end user richer. [HTML 5](https://www.w3.org/TR/html5-diff/) came out, [HTTP/2](https://tools.ietf.org/html/draft-ietf-httpbis-http2-16) was drafted, the web applications have grown in size and functionality (moving towards a more fatter client), the web application frameworks have grown in functionality and support for rich client applications.
+Well, it turns out that, 9 years after that article, I was quite right. Since then, several steps have been taken towards making the life of the developers easier and the experience of the end user richer. [HTML 5](https://www.w3.org/TR/html5-diff/) came out, [HTTP/2](https://tools.ietf.org/html/draft-ietf-httpbis-http2-16) was drafted, the web applications have grown in size and functionality (moving towards a more fatter client), the web application frameworks have grown in functionality and support for rich client applications.
 
 Moreover, the [Web Components specs](http://webcomponents.org/) came out, an “umbrella” for four W3C specifications:
 

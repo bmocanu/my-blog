@@ -1,9 +1,13 @@
 ---
-title: "From the past: the need for a new client-server web model"
-published: 2018-01-17
+title: "The need for a new client-server web model"
+published: 2018-01-20
+updated: 2026-10-25
+tags: [client, server, web model, new protocol]
 ---
 
-*Note: this is a long two-part post that I published back in 2008 (here I included both parts). I am revisiting and reposting this as it makes some sense for a more up to date topic: A quick review of the Google Polymer project (upcoming).*
+{{< note >}}
+This is a long two-part post that I published back in 2008 (here I included both parts) and just updated today. I am revisiting and reposting this as it makes some sense for a more up to date topic: A quick review of the Google Polymer project (next post).
+{{< /note >}}
 
 We are building complex web applications for years now, and the dialog between the pages that browsers display and the server backend is well known and with very clear and simple rules. But did it ever occur to you that, what for the browser and for the server backend is a perfect and normal dialog, for the developers AND for the users (at least for those users that are able to see this) this is all just a very big and nasty simulation?
 

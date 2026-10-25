@@ -9,9 +9,9 @@ tags: [checklist, safety net, security]
 I originally published this in 2017 and updated it today, for the new installment of this blog.
 {{< /note >}}
 
-On October 30th, 1935, a Boeing aircraft named Model 299 (later called [B-17](https://en.wikipedia.org/wiki/Boeing_B-17_Flying_Fortress) or, more romantically, the Flying Fortress) of the Army Air Corps took off, climbed and climbed until it stalled, then nosed over and crashed, killing the two pilots and injuring the other observers aboard. The cause? A simple and basic mistake, which was not supposed to happen, considering the skills of the two pilots and the many-months experience they had with the Model 299.
+On October 30th, 1935, a Boeing aircraft named Model 299 (later called [B-17](https://en.wikipedia.org/wiki/Boeing_B-17_Flying_Fortress) or, more romantically, the Flying Fortress) of the Army Air Corps, took off, climbed and climbed until it stalled, then nosed over and crashed, killing the two pilots and injuring the other observers aboard. The cause? A simple and basic mistake, which was not supposed to happen, considering the skills of the two pilots and the many-months experience they had with the Model 299.
 
-*Boeing Model 299 (B-17)*
+## Boeing Model 299 (B-17)
 
 That crash marks the point when a very simple yet effective technique is introduced in the American aviation: the use of technical pre-flight checklists for pilots. You see, the reason for that error (and of many other crashes before that one) was because the pilots were too skilled, too sure on their capacity of handling a complex machinery that the Model 299 was. Too skilled to check the basic stuff and to avoid a catastrophy from happening.
 
