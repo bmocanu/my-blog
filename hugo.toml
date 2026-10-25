@@ -3,6 +3,9 @@ locale = 'en-US'
 title = 'Bogdan Mocanu'
 theme = 'apollo'
 
+# Add here the files to ignore
+# ignoreFiles = ['[/\\]content[/\\]posts[/\\].*\.html$', '[/\\]content[/\\]posts[/\\][^/\\]*_files[/\\]']
+
 # --- Settings a theme cannot provide (see themes/apollo/README.md) ---
 
 # Only the "tags" taxonomy (no categories).
