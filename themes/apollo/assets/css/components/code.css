@@ -74,6 +74,7 @@ pre {
   background-color: var(--bg-primary) !important;
   border-radius: 5px;
   border: 1px solid var(--border-color);
+  font-size: 90%;
   line-height: 1.4;
   overflow-x: auto;
   padding: 1em;

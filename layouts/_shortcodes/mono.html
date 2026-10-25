@@ -1,0 +1,7 @@
+{{- /*
+A monospace (JetBrains Mono) block for text that is not source code: console output, file listings, ASCII art.
+The body is shown verbatim (not parsed as markdown) and has no language label or copy button.
+
+@example: {{< mono >}}some text{{< /mono >}}
+*/ -}}
+<pre style="font-family: var(--mono-text-font)">{{ trim .Inner "\r\n" }}</pre>

@@ -10,6 +10,8 @@ I also write about software development. I firmly believe that every good develo
 
 ## Technical path
 
+I started coding when I was little, fidling with Basic on a {{< accent >}}ZX Spectrum HC90{{< /accent >}}, then I moved on to QBasic, Turbo Pascal, Turbo C++, Delphi, C++ Builder.
+
 My first job in IT was in {{< accent >}}2004{{< /accent >}}.  
 
 In {{< accent >}}2005{{< /accent >}} I started developing enterprise applications on the Java platform.  
@@ -24,7 +26,7 @@ In {{< accent >}}2023{{< /accent >}} I switched markets and started developing p
 
 All content on this website is written by me (and, therefore, all mistakes are gloriously mine). 
 
-There is {{< accent >}}no AI generated content here{{< /accent >}}. 
+There is {{< accent >}}no Gen AI/LLM written content here{{< /accent >}}. 
 
 The following resources were used:
 - Site is built with [Hugo](https://gohugo.io/)
@@ -35,4 +37,4 @@ The following resources were used:
 
 Find me via the icon links in the header. 
 
-You can also send me an email at: {{< accent >}}*bogdan.mocanu*{{< /accent >}} at Google's mail service.
+You can also send me an email at: {{< accent >}}bogdan.mocanu{{< /accent >}} at Google's mail service.

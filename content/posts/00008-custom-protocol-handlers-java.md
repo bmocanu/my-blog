@@ -17,9 +17,9 @@ After a few days, we got the need of taking the scripts and putting them in the 
 
 Naturally, the starting point for our solution was the URL class. Since that is the only thing that can be fetched to the GroovyScriptEngine, that was the starting point. We decided to implement a handler for a custom protocol, say script, and the URLs like
 
-{{< note >}}
+{{< mono >}}
 script://scriptservice/security/login.groovy
-{{< /note >}}
+{{< /mono >}}
 
 would be resolved to the Script table, fetching the content of the property named “scriptservice.security.login.groovy“.
 
