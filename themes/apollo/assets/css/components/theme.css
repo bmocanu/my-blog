@@ -1,6 +1,6 @@
 :root {
   /* Fonts */
-  --font-size-base: 16px;
+  --font-size-base: 110%;
   --mono-text-font: "Jetbrains Mono", monospace;
   --text-font: "ZedTextFtl", sans-serif;
   --header-font: var(--text-font);

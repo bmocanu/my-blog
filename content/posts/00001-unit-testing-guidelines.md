@@ -2,11 +2,16 @@
 title: Unit testing guidelines
 published: 2016-04-29
 updated: 2026-10-25
+tags: [testing, unit testing, junit, java]
 ---
+
+{{< note >}}
+I originally published this in 2016 and updated it today. I think the advice still holds, these are good guidelines.
+{{< /note >}}
 
 While developing a software service, an important part of the development process is writing unit tests. These (in most cases, small) units of code create the safety net that will protect you when making changes, refactoring code or implementing new features. Since we are humans, and prone to mistakes, we need at least this kind of system to make sure that the changes that we just performed do not break the system, and do not have unknown or hidden side effects in other components of the product under development.
 
-Therefore, here are some of the guidelines and practices that I found very useful when writing unit tests (in my examples, I will use JUnit, but these guidelines hold for any other unit testing framework):
+Therefore, here are some of the guidelines and practices that I found very useful when writing unit tests (in my examples, I will use JUnit 5, but these guidelines hold for any other unit testing framework):
 
 ## Write independent unit tests
 
@@ -24,9 +29,9 @@ In a project that I worked on in the past, we had two SQL scripts: the first one
 
 This rule goes hand in hand with the previous two. After each test completes, make sure that in the *@AfterEach* method you clean up all the data that was created/modified/deleted by the test. Otherwise, you might get tests that are succeeding the first time they are executed, and fail next time. Or you might get tests that are failing simply because another test was executed before them, and the tracks were not completely cleaned up.
 
-## Test the 3 paths: happy, edge, exception
+## Test the happy, the edge, the exceptional
 
-A general tendency among programmers is to write tests that are stressing only the happy path of the code. That is, the tests are taking the common input data and feeding it to the CUT (Class Under Test) and making assertions regarding the expected output. This testing of the happy path is perfectly OK, since the unit test must make sure that the code is actually doing what it is supposed to.
+A general tendency among programmers is to write tests that are stressing only the happy path of the code. That is, the tests are taking the common input data and feeding it to the CUT (class under test) and making assertions regarding the expected output. This testing of the happy path is perfectly OK, since the unit test must make sure that the code is actually doing what it is supposed to.
 
 However, the happy path is only a third of what the test should check. There is also the edge path and the exceptional path. The edge path covers those cases that are at the edge/limit/boundary of the allowed set of input values. If a method accepts an integer and computes something, then you should test that method for negative values, *Integer.MIN_VALUE*, *Integer.MAX_VALUE*. Of course, these are really extreme values, and in some cases the domain of permitted values is much more restricted. However, the limits of these domains must be fully tested, to make sure that the CUT behaves as it should.
 
@@ -34,9 +39,9 @@ The exceptional path covers the cases that are not expected by the CUT. Feed nul
 
 ## Use test fixture methods for setting up the tests
 
-Each test method needs a little setup before being able to execute. Whether it involves creating the mocks for the CUT (ClassUnderTest) or executing the preparation scripts for the tests, this setup code is required to be executed for each method.
+Each test method needs a little setup before being able to execute. Whether it involves creating the mocks for the CUT (class under test) or executing the preparation scripts for the tests, this setup code is required to be executed for each method.
 
-Therefore, it is recommended to create fixture methods so that you don’t repeat the same test code in each method. JUnit provides *@BeforeAll*, *@BeforeEach*, *@AfterEach*, *@AfterAll* annotated methods for this. If you use a different unit testing framework, check the docs, there must be a way to accomplish this. If not, then you can always create the fixture methods in the test class, and then call the fixtures in each testing method, at the beginning.
+Therefore, it is recommended to create fixture methods so that you don't repeat the same test code in each method. JUnit provides *@BeforeAll*, *@BeforeEach*, *@AfterEach*, *@AfterAll* annotated methods for this. If you use a different unit testing framework, check the docs, there must be a way to accomplish this. If not, then you can always create the fixture methods in the test class, and then call the fixtures in each testing method, at the beginning.
 
 ## Design code with testing in mind
 
@@ -46,7 +51,7 @@ Example: instead of implementing the method *serializeMyObject()* with a *FileWr
 
 ## Document tests with JavaDoc
 
-As any other piece of code, make sure that your test methods and classes are properly documented. It is important to describe in the test comments the tested class, the exact cases that each method tests, the setup performed for testing, perhaps the paths that are not yet covered (assuming that you don’t implement ALL the code paths in the same phase (which is something that you shouldn’t do ).
+As any other piece of code, make sure that your test methods and classes are properly documented. It is important to describe in the test comments the tested class, the exact cases that each method tests, the setup performed for testing, perhaps the paths that are not yet covered (assuming that you don't implement ALL the code paths in the same phase (which is something that you shouldn’t do).
 
 ## Create environment independent tests
 
@@ -56,7 +61,7 @@ This will ensure that a report of a failing test does indeed mean that the imple
 
 ## Keep tests small and fast
 
-Not much to add here. The tests should be simple and clear, don't make your testing code more complicated than your actual code. Setup – invoke – get results – assert. This will ensure that you don’t get to debug your tests (otherwise you might need to write tests for tests ).
+Not much to add here. The tests should be simple and clear, don't make your testing code more complicated than your actual code. Setup – invoke – get results – assert. This will ensure that you don't get to debug your tests (otherwise you might need to write tests for tests).
 
 ## Do not write tests that need human intervention
  

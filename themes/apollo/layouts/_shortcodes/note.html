@@ -1,7 +1,7 @@
 {{- /*
 A highlighted note, optionally collapsible.
 
-@param {string} [header] Markdown for the header line.
+@param {string} [header] Markdown for the header line. Without it, no header bar is shown (unless clickable).
 @param {bool} [clickable] Turn the header into a toggle button.
 @param {bool} [hidden] With clickable: start collapsed.
 @param {bool} [center] Center the header text instead of showing the pencil icon.
@@ -20,9 +20,11 @@ A highlighted note, optionally collapsible.
     {{ .Inner | .Page.RenderString (dict "display" "block") }}
   </div>
   {{- else }}
+  {{- if $header }}
   <div class="note-header">
     <div class="{{ $headerClass }}">{{ $header }}</div>
   </div>
+  {{- end }}
   <div class="note-content">
     {{ .Inner | .Page.RenderString (dict "display" "block") }}
   </div>

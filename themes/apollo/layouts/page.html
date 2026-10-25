@@ -10,28 +10,28 @@
           {{- end }}
 
           {{- if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
-            :: Updated on <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
+            / Updated on <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
           {{- end }}
 
           {{- if .Params.read_time }}
-            :: <time>{{ .ReadingTime }}</time> Min Read
+            / <time>{{ .ReadingTime }}</time> Min Read
           {{- end }}
 
           {{- if and site.Params.wordCount .WordCount }}
-            :: {{ .WordCount }} Words
+            / {{ .WordCount }} Words
           {{- end }}
 
           {{- /* Link to the page's source on GitHub (set `repoURL` and `repoView`). */}}
           {{- if or .Params.repo_view site.Params.repoView }}
             {{- $repo := or .Params.repo_url site.Params.repoURL }}
             {{- with and $repo .File }}
-              :: <a href="{{ $repo }}{{ replace .Path "\\" "/" }}" target="_blank" rel="noopener noreferrer">Source Code</a>
+              / <a href="{{ $repo }}{{ replace .Path "\\" "/" }}" target="_blank" rel="noopener noreferrer">Source Code</a>
             {{- end }}
           {{- end }}
 
           {{- /* Tags are shown as written in the front matter (Hugo capitalizes the term pages' titles). */}}
           {{- with .Params.tags }}
-            <span class="tags-label">::</span>
+            <span class="tags-label">/</span>
             <span class="tags">
               {{- range sort . }}
                 <a href="{{ printf "tags/%s/" (urlize .) | relLangURL }}" class="post-tag">{{ . }}</a>
