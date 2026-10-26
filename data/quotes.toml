@@ -3,6 +3,118 @@
 # Add more with another [[quotes]] block.
 
 [[quotes]]
+text = "The only constant in the technology industry is change."
+author = "Marc Benioff"
+
+[[quotes]]
+text = "The 4 Ps for Change and Release: Planning Prevents Poor Performance."
+author = "Unknown"
+
+[[quotes]]
+text = "Any sufficiently advanced bug is indistinguishable from a feature."
+author = "Rick Kulawiec"
+
+[[quotes]]
+text = "IT is ever-changing and there is the need to evolve in order to stay relevant."
+author = "Ryan Ogilvie"
+
+[[quotes]]
+text = "A Release is like a boat. 80% of the holes plugged is not good enough."
+author = "Unknown"
+
+[[quotes]]
+text = "Try harder next time…is not a problem management method mentioned in ITIL."
+author = "Denis Matte"
+
+[[quotes]]
+text = "Technology itself is neither good or bad. People are good or bad."
+author = "Naveen Jain"
+
+[[quotes]]
+text = "ITSM delivery is all about helping people and thats why its important to keep the human touch intact."
+author = "Unknown"
+
+[[quotes]]
+text = "Simplicity is the ultimate sophistication."
+author = "Unknown"
+
+[[quotes]]
+text = "IT is not just another department in an organization. Its pervasive, like electricity."
+author = "The Phoenix Project"
+
+[[quotes]]
+text = "The Change manager is like the air traffic controller of the production environment."
+author = "Unknown"
+
+[[quotes]]
+text = "A fool with a tool is still a fool. Always have a goal, a plan & the tool as the enabler."
+author = "Darshan Appayanna"
+
+[[quotes]]
+text = "The best customer service is when end users dont need to reach out to the help desk."
+author = "Nishant Rao"
+
+[[quotes]]
+text = "The SLA explains the service. It does not predict the performance of that service. Explanation does not mean prediction."
+author = "Denis Matte"
+
+[[quotes]]
+text = "The simplest way to increase availability is to focus on Incident Management and Change Management."
+author = "Unknown"
+
+[[quotes]]
+text = "Quality in a service or product is not what you put into it. Its what the client or customer gets out of it."
+author = "Peter Drucker"
+
+[[quotes]]
+text = "The foundation of good help desk support is the ability to organize your workload, prioritize tickets, and monitor ticket management."
+author = "Megan Pacella"
+
+[[quotes]]
+text = "The value of networking. It is very important (in IT). There are so many resources out there that you can connect with for the latest updates, tips and tricks."
+author = "Ryan Ogilvie"
+
+[[quotes]]
+text = "IT Security is a form of Problem Management. It looks to proactively prevent Incidents."
+author = "Unknown"
+
+[[quotes]]
+text = "Getting information off the Internet is like taking a drink from a fire hydrant."
+author = "Mitchell Kapor"
+
+[[quotes]]
+text = "When working for IT Security, you are only one Incident away from being the most important group in IT."
+author = "Unknown"
+
+[[quotes]]
+text = "If people resist Root Cause Analysis, ask what they will do to prevent it in the future."
+author = "Denis Matte"
+
+[[quotes]]
+text = "Not all improvement ideas are good ones. Process and governance is needed to allow bad ideas to die and good ideas to flourish."
+author = "Denis Matte"
+
+[[quotes]]
+text = "If you want a 2-3% efficiency improvement in IT service management, work harder. If you want a 30-50% efficiency improvement, adopt Lean."
+author = "Stuart Rance"
+
+[[quotes]]
+text = "Any improvements made anywhere except the bottleneck are an illusion."
+author = "The Phoenix Project"
+
+[[quotes]]
+text = "ITSM is full of verschlimmbesserung – supposed improvements that make things worse. Correct this by adopting better change management principles and aligning all initiatives to a shared goal – exceptional customer experience."
+author = "Stuart Rance"
+
+[[quotes]]
+text = "In our company, we all have 2 jobs: 1) to do our job and 2) to improve it"
+author = "Toyota"
+
+[[quotes]]
+text = "It is better to have a frustrated person who complains than someone who no longer cares about the system in place."
+author = "Ryan Ogilvie"
+
+[[quotes]]
 text = "Simplicity is prerequisite for reliability."
 author = "Edsger W. Dijkstra"
 
@@ -29,3 +141,131 @@ author = "Neal Ford"
 [[quotes]]
 text = "Java is a blue collar language. It's not PhD thesis material but a language for a job."
 author = "James Gosling, in 1997's paper 'The Feel of Java'"
+
+[[quotes]]
+text = "Any sufficiently advanced technology is indistinguishable from magic."
+author = "Arthur C. Clarke"
+
+[[quotes]]
+text = "It has become appallingly obvious that our technology has exceeded our humanity."
+author = "Albert Einstein"
+
+[[quotes]]
+text = "The real danger is not that computers will begin to think like men, but that men will begin to think like computers."
+author = "Sydney J. Harris"
+
+[[quotes]]
+text = "Technology is anything that wasn't around when you were born."
+author = "Alan Kay"
+
+[[quotes]]
+text = "All of the biggest technological inventions created by man - the airplane, the automobile, the computer - says little about his intelligence, but speaks volumes about his laziness."
+author = "Mark Kennedy"
+
+[[quotes]]
+text = "Just because something doesn't do what you planned it to do doesn't mean it's useless."
+author = "Thomas Edison"
+
+[[quotes]]
+text = "Computers are useless. They can only give you answers."
+author = "Pablo Picasso"
+
+[[quotes]]
+text = "One machine can do the work of fifty ordinary men. No machine can do the work of one extraordinary man."
+author = "Elbert Hubbard"
+
+[[quotes]]
+text = "Technology is a word that describes something that doesn't work yet."
+author = "Douglas Adams"
+
+[[quotes]]
+text = "Humanity is acquiring all the right technology for all the wrong reasons."
+author = "R. Buckminster Fuller"
+
+[[quotes]]
+text = "I think that novels that leave out technology misrepresent life as badly as Victorians misrepresented life by leaving out sex."
+author = "Kurt Vonnegut"
+
+[[quotes]]
+text = "The human spirit must prevail over technology."
+author = "Albert Einstein"
+
+[[quotes]]
+text = "The great myth of our times is that technology is communication."
+author = "Libby Larsen"
+
+[[quotes]]
+text = "You cannot endow even the best machine with initiative; the jolliest steamroller will not plant flowers."
+author = "Walter Lippmann"
+
+[[quotes]]
+text = "We are stuck with technology when what we really want is just stuff that works."
+author = "Douglas Adams, The Salmon of Doubt"
+
+[[quotes]]
+text = "Technology made large populations possible; large populations now make technology indispensable."
+author = "Joseph Krutch"
+
+[[quotes]]
+text = "This is the whole point of technology. It creates an appetite for immortality on the one hand. It threatens universal extinction on the other. Technology is lust removed from nature."
+author = "Don DeLillo"
+
+[[quotes]]
+text = "If we continue to develop our technology without wisdom or prudence, our servant may prove to be our executioner."
+author = "Omar Bradley"
+
+[[quotes]]
+text = "The art challenges the technology, and the technology inspires the art."
+author = "John Lasseter"
+
+[[quotes]]
+text = "Science and technology revolutionize our lives, but memory, tradition and myth frame our response."
+author = "Arthur Schlesinger"
+
+[[quotes]]
+text = "You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete."
+author = "R. Buckminster Fuller"
+
+[[quotes]]
+text = "It's still magic even if you know how it's done."
+author = "Terry Pratchett, A Hat Full of Sky"
+
+[[quotes]]
+text = "Technological progress has merely provided us with more efficient means for going backwards."
+author = "Aldous Huxley, Ends and Means"
+
+[[quotes]]
+text = "If we teach today's students as we taught yesterday's, we rob them of tomorrow."
+author = "John Dewey"
+
+[[quotes]]
+text = "We are changing the world with technology."
+author = "Bill Gates"
+
+[[quotes]]
+text = "People who are crazy enough to think they can change the world are the ones who do."
+author = "Steve Jobs"
+
+[[quotes]]
+text = "The machine does not isolate man from the great problems of nature but plunges him more deeply into them."
+author = "Antoine de Saint-Exupéry"
+
+[[quotes]]
+text = "For a list of all the ways technology has failed to improve the quality of life, please press 3."
+author = "Alice Kahn"
+
+[[quotes]]
+text = "The production of too many useful things results in too many useless people."
+author = "Karl Marx"
+
+[[quotes]]
+text = "All of our technology is completely unnecessary to a happy life."
+author = "Tom Hodgkinson"
+
+[[quotes]]
+text = "Computers are like bikinis. They save people a lot of guesswork."
+author = "Sam Ewing"
+
+[[quotes]]
+text = "The most technologically efficient machine that man has ever invented is the book."
+author = "Northrop Frye"
