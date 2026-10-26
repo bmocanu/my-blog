@@ -2,15 +2,17 @@
 title = 'Profile'
 +++
 
-Hello, and welcome to my website! 
+This is really exciting! Hello there and welcome to my website!
 
-My name is {{< accent >}}Bogdan Mocanu{{< /accent >}}, I am a software engineer and tech enthusiast living in Brașov, Romania. This is my website, where I post about technology, personal projects and research, my homelab adventure, smart home development and other things that interest me. 
+I have the "set up a *blog* and keep it active" topic as one of my resolutions for several years already. This website had several iterations and, somehow, none of them really survived. However, I stand firmly with the belief that one of the ways a software engineer can polish his or her skills is by keeping an active technical blog. By dwelving on technical matters, by explaining them and making them accessible to the general public is a good way to improve the skills in a way that the day-by-day engineering activities can hardly do.
 
-I also write about software development. I firmly believe that every good developer should have a website or blog where he or she can teach the world various technical things and can express opinions about the IT world, as only by writing about or explaining technical things, a developer can be sure that he or she really understood them.
+My name is {{< accent >}}Bogdan Mocanu{{< /accent >}}, I am a software engineer and tech enthusiast living and working in Brașov, Romania. This is my website, where I post about technology, personal projects and research, my homelab adventure, smart home tweaks, software development and other things that interest me. 
+
+I hope you will find useful information here. Enjoy your stay!
 
 ## Technical path
 
-I started coding when I was little, tinkering with Basic on a {{< accent >}}ZX Spectrum HC90{{< /accent >}}, then I moved on to QBasic, Turbo Pascal, Turbo C++, Delphi, C++ Builder.
+I started coding when I was little, tinkering with Basic on a ZX Spectrum HC90, then I moved on to QBasic, Turbo Pascal, Turbo C++, Delphi, C++ Builder.
 
 My first job in IT was in {{< accent >}}2004{{< /accent >}}.  
 
@@ -20,11 +22,11 @@ In {{< accent >}}2010{{< /accent >}}, I moved into the Telecom business area, wo
 
 In {{< accent >}}2013{{< /accent >}} I moved into the field of Identity Access Management, working with cryptography, Public Key Infrastructure, and mobile digital signatures.  
 
-In {{< accent >}}2023{{< /accent >}} I switched markets and started developing projects in the Ground Transportation market. 
+In {{< accent >}}2023{{< /accent >}} I switched areas and started developing projects in the Ground Transportation / Travel & Logistics market. 
 
 ## On this website & On AI usage
 
-All content on this website is written by me. No Gen AI content written here.
+All content on this website is written by me. {{< accent >}}No Gen AI content.{{< /accent >}}
 
 Gen AI was used for translating the Apollo theme from Zola (another site builder) to Hugo and tweaking theme's formatting blocks.
 
