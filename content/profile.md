@@ -10,7 +10,7 @@ I also write about software development. I firmly believe that every good develo
 
 ## Technical path
 
-I started coding when I was little, fidling with Basic on a {{< accent >}}ZX Spectrum HC90{{< /accent >}}, then I moved on to QBasic, Turbo Pascal, Turbo C++, Delphi, C++ Builder.
+I started coding when I was little, tinkering with Basic on a {{< accent >}}ZX Spectrum HC90{{< /accent >}}, then I moved on to QBasic, Turbo Pascal, Turbo C++, Delphi, C++ Builder.
 
 My first job in IT was in {{< accent >}}2004{{< /accent >}}.  
 
@@ -22,20 +22,16 @@ In {{< accent >}}2013{{< /accent >}} I moved into the field of Identity Access M
 
 In {{< accent >}}2023{{< /accent >}} I switched markets and started developing projects in the Ground Transportation market. 
 
-## On this website
+## On this website & On AI usage
 
-All content on this website is written by me (and, therefore, all mistakes are gloriously mine). 
+All content on this website is written by me. No Gen AI content written here.
 
-The following resources were used:
+Gen AI was used for translating the Apollo theme from Zola (another site builder) to Hugo and tweaking theme's formatting blocks.
+
+The website uses the following tech:
 - Site is built with [Hugo](https://gohugo.io/)
 - The theme is a translated version of [the Apollo theme by not-matthias](https://github.com/not-matthias/apollo)
 - The favicon uses [a feather icon](https://www.flaticon.com/free-icon/feather_11073658) created by [meaicon on Flaticon](https://www.flaticon.com/authors/meaicon)
-
-## AI usage
-
-There is {{< accent >}}no Gen AI written content here{{< /accent >}}. All wrriten content on this website is mine. 
-
-Gen AI was used for translating the Apollo theme from Zola (another site builder) to Hugo and tweaking Hugo's formatting blocks.
 
 ## Contact
 
