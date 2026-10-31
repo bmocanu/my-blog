@@ -2,7 +2,7 @@
 .code-label {
   --lang-color: #333;
   background: var(--lang-color);
-  color: var(--label-color);
+  color: var(--label-text, var(--label-color));
   border-radius: 0 0 0.25rem 0.25rem;
   font-size: 13.2px;
   letter-spacing: 0.025rem;
@@ -61,6 +61,22 @@
 .label-cpp { --lang-color: #f34b7d; }
 .label-powershell { --lang-color: #012456; }
 .label-nginx { --lang-color: #009639; }
+
+/* Dark text on light label backgrounds, where the default light text is hard to read */
+.label-js,
+.label-javascript,
+.label-shell,
+.label-sh,
+.label-bash,
+.label-zsh,
+.label-json,
+.label-go,
+.label-golang,
+.label-java,
+.label-kotlin,
+.label-perl,
+.label-dart,
+.label-sql { --label-text: #000; }
 
 code {
   background-color: var(--bg-primary);

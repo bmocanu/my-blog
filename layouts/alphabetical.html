@@ -1,0 +1,61 @@
+{{- /*
+Pages listed alphabetically by title, grouped under a heading per first letter, without dates.
+Use it for a section with `layout = "alphabetical"` in its _index.md.
+Titles that do not start with a letter (A-Z) are grouped under "#".
+*/}}
+{{ define "main" }}
+  {{ partial "page-header.html" .Title }}
+
+  {{ with .Content }}
+    <div class="section-content">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  {{- if not .RegularPages }}
+    {{ partial "coming-soon.html" . }}
+  {{- else }}
+    {{- /* Sort case-insensitively, keeping the sort key next to the page. */}}
+    {{- $entries := slice }}
+    {{- range .RegularPages }}
+      {{- $key := lower .Title }}
+      {{- $letter := "#" }}
+      {{- with findRE `^[a-z]` $key 1 }}{{ $letter = upper (index . 0) }}{{ end }}
+      {{- $entries = $entries | append (dict "key" $key "letter" $letter "page" .) }}
+    {{- end }}
+    {{- $entries = sort $entries "key" }}
+
+    <style>
+      .alpha-list h2 { margin: 2rem 0 0; }
+      .alpha-list ul { margin: 0; padding: 0.5rem 0 0 0; }
+      .alpha-list li { list-style-type: none; margin-bottom: 0.5rem; }
+      .alpha-list li h1 { margin: 0; font-weight: normal; font-family: var(--header-font); }
+      .alpha-list li h1 a { border-bottom: none; }
+    </style>
+    <main class="alpha-list">
+      {{- $letters := slice }}
+      {{- range $entries }}{{ $letters = $letters | append .letter }}{{ end }}
+      {{- range $letter := $letters | uniq }}
+      <section>
+        <h2 id="letter-{{ if eq $letter "#" }}other{{ else }}{{ lower $letter }}{{ end }}">{{ $letter }}</h2>
+        <ul>
+          {{- range where $entries "letter" $letter }}
+          {{- with .page }}
+          {{- $url := or .Params.link_to .RelPermalink }}
+          <li>
+            <h1 class="title">
+              <a href="{{ $url }}">{{ .Title }}{{ if .Params.link_to }} ↗{{ end }}</a>
+              {{- if .Draft }}<span class="draft-label">DRAFT</span>{{ end }}
+            </h1>
+            {{- with .Description }}
+            <div class="meta"><div class="description">{{ . }}</div></div>
+            {{- end }}
+          </li>
+          {{- end }}
+          {{- end }}
+        </ul>
+      </section>
+      {{- end }}
+    </main>
+  {{- end }}
+{{ end }}

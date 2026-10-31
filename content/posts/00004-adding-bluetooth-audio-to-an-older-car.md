@@ -1,12 +1,12 @@
 ---
-title: Adding Bluetooth audio to an older car
+title: "Adding Bluetooth audio to an older car"
 published: 2017-12-31
 updated: 2026-10-25
 tags: [bluetooth, fiat linea, audio]
 ---
 
 {{< note >}}
-I originally published this in 2017 and updated it today, for the new installment of this blog.
+I originally published this in 2017.
 {{< /note >}}
 
 I am currently driving a 2009 Fiat Linea and I am a bit discomforted by the limitations of its built-in audio player. It supports CDs and also an USB connection for playing MP3 files from USB memory drives (8GB max), but it has no option to connect my mobile device to it and stream audio content to the car speakers via the car audio system. That is, it has neither an AUX IN port nor an A2DP Bluetooth capability.

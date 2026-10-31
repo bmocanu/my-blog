@@ -1,12 +1,12 @@
 ---
-title: Unit testing guidelines
+title: "Unit testing guidelines"
 published: 2016-04-29
 updated: 2026-10-25
 tags: [testing, unit testing, junit, java]
 ---
 
 {{< note >}}
-I originally published this in 2016 and updated it today. I think the advice still holds, these are good guidelines.
+I originally published this in 2016. I think the pieces of advice still hold even today.
 {{< /note >}}
 
 While developing a software service, an important part of the development process is writing unit tests. These (in most cases, small) units of code create the safety net that will protect you when making changes, refactoring code or implementing new features. Since we are humans, and prone to mistakes, we need at least this kind of system to make sure that the changes that we just performed do not break the system, and do not have unknown or hidden side effects in other components of the product under development.

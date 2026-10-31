@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <main>
+    <article>
+      <section class="body">
+        {{- /* Only a title written in the front matter is shown (not the site title fallback). */}}
+        {{ partial "page-header.html" .Params.title }}
+        {{ .Content }}
+
+        {{- /* Latest `latestPosts` posts, by last update (`updated` front matter, falling back to the creation date). */}}
+        {{- with first (int site.Params.home.latestPosts) (where site.RegularPages "Section" "in" site.Params.home.sections).ByLastmod.Reverse }}
+          <h1>Latest posts</h1>
+          <div class="post-list">
+            {{ partial "updated-list.html" . }}
+          </div>
+        {{- end }}
+
+        {{- /* Latest `latestRefs` refs, same ordering. */}}
+        {{- with first (int site.Params.home.latestRefs) (where site.RegularPages "Section" "refs").ByLastmod.Reverse }}
+          <h1>Latest refs</h1>
+          <div class="post-list">
+            {{ partial "updated-list.html" . }}
+          </div>
+        {{- end }}
+      </section>
+    </article>
+  </main>
+{{ end }}

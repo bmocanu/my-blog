@@ -1,12 +1,12 @@
 ---
-title: Checklists as an essential tool in IT (WIP)
+title: "Checklists as an essential tool in IT (WIP)"
 published: 2017-12-07
 updated: 2026-10-25
 tags: [checklist, safety net, security]
 ---
 
 {{< note >}}
-I originally published this in 2017 and updated it today, for the new installment of this blog.
+I originally published this in 2017. Checklist are an ever useful tool, regardless of how times are.
 {{< /note >}}
 
 On October 30th, 1935, a Boeing aircraft named Model 299 (later called [B-17](https://en.wikipedia.org/wiki/Boeing_B-17_Flying_Fortress) or, more romantically, the Flying Fortress) of the Army Air Corps, took off, climbed and climbed until it stalled, then nosed over and crashed, killing the two pilots and injuring the other observers aboard. The cause? A simple and basic mistake, which was not supposed to happen, considering the skills of the two pilots and the many-months experience they had with the Model 299.
@@ -30,7 +30,9 @@ Now, besides the characteristics of the industry where checklists are best appli
 - the checklist application needs to be properly validated.
 - the checklist needs to be fitted properly into the flow of the people, cannot be an element of disturbance. If this happens, then the checklist will soon be stopped being check and get useless
 
-The IT industry is no stranger to the technique of checklists. More to follow…
+The IT industry is no stranger to the technique of checklists. 
+
+{{< mono >}}To be continued...{{< /mono >}} 
 
 ## References
 

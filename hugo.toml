@@ -17,9 +17,10 @@ theme = 'apollo'
   home = ['html', 'rss', 'json']
 
 # Front matter keys for the post dates: `published` and the optional `updated`.
+# `lastmod` falls back to `date`, otherwise never-updated posts get a zero Lastmod.
 [frontmatter]
   date = ['date', 'publishDate', 'pubDate', 'published']
-  lastmod = ['updated', 'lastmod', 'modified']
+  lastmod = ['updated', 'lastmod', 'modified', 'date']
 
 [pagination]
   pagerSize = 30
@@ -60,14 +61,19 @@ theme = 'apollo'
     weight = 30
 
   [[menus.main]]
+    name = '/refs'
+    pageRef = '/refs'
+    weight = 40
+
+  [[menus.main]]
     name = '/tags'
     pageRef = '/tags'
-    weight = 40
+    weight = 50
 
   [[menus.main]]
     name = '/profile'
     pageRef = '/profile'
-    weight = 50
+    weight = 60
 
 # --- Theme parameters (defaults and docs: themes/apollo/hugo.toml) ---
 
@@ -81,7 +87,8 @@ theme = 'apollo'
   mathjax = false
 
   [params.home]
-    latestSince = 2026-01-01
+    latestPosts = 5
+    latestRefs = 3
     sections = ['posts', 'homelab']
 
   [[params.socials]]

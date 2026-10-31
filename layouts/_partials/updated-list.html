@@ -1,0 +1,33 @@
+{{- /*
+Renders a list of pages as "last updated date # title" rows.
+Like the theme's post-list.html, but shows the last update (the creation date when never updated).
+
+@context {page.Pages} . The pages to list.
+
+@example: {{ partial "updated-list.html" .Pages }}
+*/}}
+<ul>
+  {{- range . }}
+  {{- $url := or .Params.link_to .RelPermalink }}
+  <li class="list-item">
+    <section>
+      <div class="post-header">
+        <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
+
+        <div>
+          <h1 class="title">
+            <a href="{{ $url }}">{{ .Title }}{{ if .Params.link_to }} ↗{{ end }}</a>
+            {{- if .Draft }}<span class="draft-label">DRAFT</span>{{ end }}
+          </h1>
+
+          {{- with .Description }}
+          <div class="meta">
+            <div class="description">{{ . }}</div>
+          </div>
+          {{- end }}
+        </div>
+      </div>
+    </section>
+  </li>
+  {{- end }}
+</ul>

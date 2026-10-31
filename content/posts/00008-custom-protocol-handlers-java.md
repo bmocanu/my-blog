@@ -6,7 +6,7 @@ tags: [java, groovy, protocol handler]
 ---
 
 {{< note >}}
-I originally published this in 2016 and updated it today, for the new installment of this blog.
+I originally published this in 2016.
 {{< /note >}}
 
 In the project that I am currently working on, we are using Groovy and the Groovy Script Engine. This class has a constructor that accepts a path (relative to which it resolves the scripts to execute) or a list of URLs. Well, the class works pretty nice with files, loading the scripts from disk, executing them, and also watching them for changes (this is actually why we are using this class as startpoint for Groovy).

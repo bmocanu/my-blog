@@ -1,5 +1,5 @@
 ---
-title: Unit testing with Spring - A bad mix
+title: "Unit testing with Spring - A bad mix"
 published: 2016-05-15
 updated: 2026-10-25
 tags: [testing, unit testing, junit, java, spring framework]

@@ -1,12 +1,12 @@
 ---
-title: Twenty minutes to test a SH phone before buying
+title: "Twenty minutes to test a SH phone before buying"
 published: 2018-01-06
 updated: 2026-10-25
 tags: [testing, second-hand phone]
 ---
 
 {{< note >}}
-I originally published this in 2018 and updated it today, for the new installment of this blog.
+I originally published this in 2018.
 {{< /note >}}
 
 When you buy a second hand / used mobile phone from someone that you can meet in person, you usually get a short amount of time (tens of minutes) to inspect the device and make sure that everything is in good working condition. This post makes a checklist of what to look for before making the purchase, considering that you only get that small amount of time to check the device.

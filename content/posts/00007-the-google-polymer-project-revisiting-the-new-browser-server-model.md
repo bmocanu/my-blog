@@ -6,7 +6,7 @@ tags: [google, google polymer, new protocol]
 ---
 
 {{< note >}}
-I originally published this in 2018 and updated it today, for the new installment of this blog.
+I originally published this in 2018.
 {{< /note >}}
 
 At the end of 2008, I published a [two-part article](/posts/00006-from-the-past-the-need-for-a-new-client-server-web-model/) on the problems that I saw back then for the browser-server model (as I was calling it at that time), mainly a set of complaints and a set of possible solutions that I saw for the rigidity of the [HTTP 1.1](https://tools.ietf.org/html/rfc2068) and the static + stateless + document-based nature of the web applications.
