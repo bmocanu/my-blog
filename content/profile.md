@@ -33,6 +33,7 @@ Gen AI was used for translating the Apollo theme from Zola (another site builder
 The website uses the following tech:
 - Site is built with [Hugo](https://gohugo.io/)
 - The theme is a translated version of [the Apollo theme by not-matthias](https://github.com/not-matthias/apollo)
+- The code theme used for code snippets is [Ayu Dark](https://vscodethemes.com/e/teabyii.ayu/ayu-dark)
 - The favicon uses [a feather icon](https://www.flaticon.com/free-icon/feather_11073658) created by [meaicon on Flaticon](https://www.flaticon.com/authors/meaicon)
 
 ## Contact
