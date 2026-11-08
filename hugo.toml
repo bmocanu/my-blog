@@ -61,19 +61,24 @@ theme = 'apollo'
     weight = 30
 
   [[menus.main]]
+    name = '/read'
+    pageRef = '/read'
+    weight = 40
+
+  [[menus.main]]
     name = '/refs'
     pageRef = '/refs'
-    weight = 40
+    weight = 50
 
   [[menus.main]]
     name = '/tags'
     pageRef = '/tags'
-    weight = 50
+    weight = 60
 
   [[menus.main]]
     name = '/profile'
     pageRef = '/profile'
-    weight = 60
+    weight = 70
 
 # --- Theme parameters (defaults and docs: themes/apollo/hugo.toml) ---
 

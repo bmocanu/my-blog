@@ -23,44 +23,36 @@ tags: [bruno, api, reference]
 Prepare data before each request. Put this in the pre-request script of the collection or folder.
 
 ```js
-// Prepare data before each script
-// Use dynamic variables instead of env variables, as these should be calculated dynamically
+// Prepare variables before each script
+// Use dynamic variables instead of env variables, these are calculated automatically before running each request
 var dateTimeNow = new Date();
 bru.setVar("dateTime.now", dateTimeNow.toISOString());
+
+var dateTimeTomorrow = new Date(dateTimeNow);
+dateTimeTomorrow.setDate(dateTimeNow.getDate() + 1);
+bru.setVar("dateTime.tomorrow", dateTimeTomorrow.toISOString());
 
 var dateTimeYesterday = new Date(dateTimeNow);
 dateTimeYesterday.setDate(dateTimeNow.getDate() - 1);
 bru.setVar("dateTime.yesterday", dateTimeYesterday.toISOString());
 
-var dateTime3DaysAhead = new Date(dateTimeNow);
-dateTime3DaysAhead.setDate(dateTimeNow.getDate() + 3);
-bru.setVar("dateTime.3daysAhead", dateTime3DaysAhead.toISOString());
-
-var dateTime1DayAgo = new Date(dateTimeNow);
-dateTime1DayAgo.setDate(dateTimeNow.getDate() - 1);
-bru.setVar("dateTime.1dayAgo", dateTime1DayAgo.toISOString());
-
-var dateTime3DaysAgo = new Date(dateTimeNow);
-dateTime3DaysAgo.setDate(dateTimeNow.getDate() - 3);
-bru.setVar("dateTime.3daysAgo", dateTime3DaysAgo.toISOString());
-
-var dateTime1WeekAgo = new Date(dateTimeNow);
-dateTime1WeekAgo.setDate(dateTimeNow.getDate() - 7);
-bru.setVar("dateTime.1weekAgo", dateTime1WeekAgo.toISOString());
+var dateTimeOneWeekAgo = new Date(dateTimeNow);
+dateTimeOneWeekAgo.setDate(dateTimeNow.getDate() - 7);
+bru.setVar("dateTime.oneWeekAgo", dateTimeOneWeekAgo.toISOString());
 
 ```
 
 Create a custom request that retrieves ALL articles via API, then set dynamic variables for each one of them, so that you can use the (random) IDs later on.
 
 ```js
-// Prefix for the Bruno variables to create
+// Prefix for the Bruno dynamic variables to create
 const envVarName = "test.articleShortId."
 
 // Parse the response, create variables for each article short ID
 let articles = res.getBody();
 articles.articles.forEach(article => {
   let completeEnvVar = envVarName + article.shortId
-  console.log("Setting " + completeEnvVar + " to " + article.fullId);
+  console.log("Set " + completeEnvVar + " to " + article.fullId);
   bru.setVar(completeEnvVar, article.fullId);
 });
 ```

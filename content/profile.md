@@ -6,7 +6,7 @@ Hello there and welcome to this website!
 
 My name is {{< accent >}}Bogdan Mocanu{{< /accent >}}, I am a software engineer and tech enthusiast living and working in Brașov, Romania. This is my website, where I post about technology, personal projects and research, my homelab adventures, smart home tweaks, software development and a bunch things that interest me. 
 
-I am really excited about this website! I had the "set up a *blog* and keep it active" topic as one of my resolutions for several years already. This website had several iterations until now and, somehow, none of them really survived. However, I stand firmly with the belief that one of the ways a software engineer can polish his or her skills is by keeping an active technical blog. By dwelving on technical matters, by explaining them and making them accessible to the general public is a good way to improve the skills in a way that the day-by-day engineering activities can hardly do.
+I am really excited about this website! I had the `set up a *blog* and keep it active` topic as one of my resolutions for several years already. This website had several iterations until now and, somehow, none of them really survived. However, I stand firmly with the belief that one of the ways a software engineer can polish his or her skills is by keeping an active technical blog. By dwelving in technical matters, by explaining them and making them accessible to the general public is a good way to improve the skills in a way that the day-by-day engineering activities can hardly do.
 
 I hope you will find useful information here. Enjoy your stay!
 
