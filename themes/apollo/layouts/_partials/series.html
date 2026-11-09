@@ -12,6 +12,7 @@ series) or "pager" (previous / next links, shown after the post). For "list", `v
 {{- with $page.CurrentSection }}
   {{- if and .Params.series (ne $page.Kind "section") }}
     {{- $section := . }}
+    {{- /* Upcoming parts (`build: {render: never, list: local}`) are listed but have no page: no link, and the pager skips them. */}}
     {{- $parts := .RegularPages.ByWeight }}
     {{- $pos := 0 }}
     {{- range $i, $p := $parts }}
@@ -28,6 +29,8 @@ series) or "pager" (previous / next links, shown after the post). For "list", `v
     {{- range $parts }}
       {{- if eq . $page }}
     <li class="current" aria-current="page">{{ .Title }}</li>
+      {{- else if not .RelPermalink }}
+    <li class="upcoming">{{ .Title }}</li>
       {{- else }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{- end }}
@@ -35,15 +38,15 @@ series) or "pager" (previous / next links, shown after the post). For "list", `v
   </ol>
 </nav>
       {{- else if eq $.mode "pager" }}
-        {{- $prev := cond (gt $pos 1) (index $parts (sub $pos 2)) nil }}
-        {{- $next := cond (lt $pos (len $parts)) (index $parts $pos) nil }}
+        {{- $prev := (where (first (sub $pos 1) $parts) "RelPermalink" "ne" "" | last 1) }}
+        {{- $next := (where (after $pos $parts) "RelPermalink" "ne" "" | first 1) }}
 <nav class="series-pager" aria-label="Series navigation">
-  {{- with $prev }}
+  {{- with index $prev 0 }}
   <a class="series-prev" href="{{ .RelPermalink }}"><span class="series-pager-label">← Previous</span>{{ .Title }}</a>
   {{- else }}
   <span></span>
   {{- end }}
-  {{- with $next }}
+  {{- with index $next 0 }}
   <a class="series-next" href="{{ .RelPermalink }}"><span class="series-pager-label">Next →</span>{{ .Title }}</a>
   {{- end }}
 </nav>

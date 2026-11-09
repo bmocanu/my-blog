@@ -219,3 +219,21 @@ del {
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
+
+/* Site footer */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  color: var(--text-1);
+  font-size: 0.85em;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  text-align: center;
+
+  .footer-heart {
+    color: var(--primary-color);
+  }
+
+  .footer-sep {
+    margin: 0 0.5em;
+  }
+}

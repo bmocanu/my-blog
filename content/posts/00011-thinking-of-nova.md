@@ -1,5 +1,5 @@
 ---
-title: "Thinking of Nova"
+title: "Thinking of NovaOne"
 published: 2016-08-20
 tags: [idea, thinking, reasoning machine]
 ---
@@ -22,7 +22,7 @@ Sure enough, there are algorithms to compute the path, analyze the obstacles and
 
 But hold on for a moment. On a very small scale, this is exactly what a computer is. A computer has the ability to learn, (has all the potential to make connections, to correlate known things in order to get to new things) but has no knowledge of how to do this. And of course, has no capability to learn by itself. Yet.
 
-## On Nova. Four items
+## About NovaOne. Four items
 
 After looking at how the little girl was able to avoid people by evaluating the current state, balancing possible actions at that moment and picking up the best path, in her cute run around, I started thinking about how to (try to) model the main things that were working on the little girl's case: sensors, executors, information and storage of information.
 
@@ -34,7 +34,7 @@ Next, we have the *information* and the *storage of it*. These concepts are some
 
 ## And the fifth
 
-The fifth item is the actual brain. I will leave the poor girl alone (enough deconstruction for one day, for her) and pick up Nova. You might think that the brain is the most difficult one. It might be, but I think it is not. I think the brain should be a medium-sized package of algorithms, used simply for creating connections between what Nova knows, and what it needs to learn next. For example, if you hear something about [Grenache](https://harvestwineshopsd.com/blogs/grape-profiles/grenache-wine) you might know that this is a type of wine from Spain, but you might also not know a thing about what that is. By the name of it, it could just as well be a type of grenade, or a type of wall painting. Ore maybe a color.
+The fifth item is the actual brain. I will leave the poor girl alone (enough deconstruction for one day, for her) and pick up NovaOne. You might think that the brain is the most difficult one. It might be, but I think it is not. I think the brain should be a medium-sized package of algorithms, used simply for creating connections between what NovaOne knows, and what it needs to learn next. For example, if you hear something about [Grenache](https://harvestwineshopsd.com/blogs/grape-profiles/grenache-wine) you might know that this is a type of wine from Spain, but you might also not know a thing about what that is. By the name of it, it could just as well be a type of grenade, or a type of wall painting. Ore maybe a color.
 
 The idea is that you have a set of information. Indeed, a very large one. When you learn about Grenache, when you read that this is a type of wine, you immediately make connections to what you know about wines, in general. In your mind some memories pop up, from when you were a kid, perhaps, and you were visiting a vineyard. Or a funny video that you saw 1 year ago on YouTube. Or some nice/bad taste that you experienced while having the dinner on a restaurant, and ordered some red wine.
 

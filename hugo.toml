@@ -93,8 +93,8 @@ theme = 'apollo'
 
   [params.home]
     latestPosts = 5
+    latestHomelab = 5
     latestRefs = 3
-    sections = ['posts', 'homelab']
 
   [[params.socials]]
     name = 'x/twitter'

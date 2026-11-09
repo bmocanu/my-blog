@@ -1,4 +1,7 @@
 :root {
+  /* Medium gray for upcoming (not yet published) pages, readable on both themes. */
+  --upcoming-color: #888;
+
   /* Fonts */
   --font-size-base: 110%;
   --mono-text-font: "Jetbrains Mono", monospace;

@@ -7,6 +7,8 @@ Renders a list of pages as "date # title" rows.
 */}}
 <ul>
   {{- range . }}
+  {{- /* An upcoming page (`build: {render: never, list: local}`) is listed but has no URL to link to. */}}
+  {{- $upcoming := and (not .RelPermalink) (not .Params.link_to) }}
   {{- $url := or .Params.link_to .RelPermalink }}
   {{- $description := "" }}
   {{- with .Description }}
@@ -17,18 +19,27 @@ Renders a list of pages as "date # title" rows.
       {{- $description = printf "%s…" (.Summary | plainify | htmlUnescape) }}
     {{- end }}
   {{- end }}
-  <li class="list-item">
+  <li class="list-item{{ if $upcoming }} upcoming{{ end }}">
     <section>
       <div class="post-header">
+        {{- if $upcoming }}
+        {{- /* Invisible stand-in with the same width as a date, so the titles stay aligned. */}}
+        <span class="no-date" aria-hidden="true">0000-00-00</span>
+        {{- else }}
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+        {{- end }}
 
         <div>
           <h1 class="title">
+            {{- if $upcoming }}
+            {{ .Title }}
+            {{- else }}
             <a href="{{ $url }}">{{ .Title }}{{ if .Params.link_to }} ↗{{ end }}</a>
+            {{- end }}
             {{- if .Draft }}<span class="draft-label">DRAFT</span>{{ end }}
           </h1>
 
-          {{- if $description }}
+          {{- if and $description (not $upcoming) }}
           <div class="meta">
             <div class="description">{{ $description }}</div>
             <a class="readmore" href="{{ $url }}">{{ if .Params.link_to }}Read original ⟶{{ else }}Read more ⟶{{ end }}</a>

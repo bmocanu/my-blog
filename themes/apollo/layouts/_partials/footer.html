@@ -1,0 +1,14 @@
+{{- /*
+Site footer, shown below the content of every page.
+"Last post" is the most recently created or updated page (`updated` front matter, falling back to the creation date).
+Upcoming pages are not part of the site pages, so they never count.
+
+@example: {{ partial "footer.html" . }}
+*/}}
+<footer class="site-footer">
+  <span>Built with <span class="footer-heart" aria-label="love">♥</span> in Brașov, Romania</span>
+  {{- with index site.RegularPages.ByLastmod.Reverse 0 }}
+  <span class="footer-sep" aria-hidden="true">/</span>
+  <span>Last post on <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006-01-02" }}</time></span>
+  {{- end }}
+</footer>

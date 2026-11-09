@@ -4,7 +4,7 @@ Use it for a section with `layout = "alphabetical"` in its _index.md.
 Titles that do not start with a letter (A-Z) are grouped under "#".
 */}}
 {{ define "main" }}
-  {{ partial "page-header.html" .Title }}
+  {{ partial "page-header.html" (dict "title" .Title "page" .) }}
 
   {{ with .Content }}
     <div class="section-content">

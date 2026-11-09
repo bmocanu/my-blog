@@ -1,10 +1,15 @@
 {{- /*
 Renders a big page title.
 
-@context {string} . The title. Nothing is rendered when it is empty.
+@context {string|dict} . The title, or a dict with `title` and `page`: the RSS icon of `page` is then shown after the title.
+Nothing is rendered when the title is empty.
 
 @example: {{ partial "page-header.html" .Title }}
+@example: {{ partial "page-header.html" (dict "title" .Title "page" .) }}
 */}}
-{{- with . }}
-<div class="page-header">{{ . }}</div>
+{{- $title := . }}
+{{- $page := false }}
+{{- if reflect.IsMap . }}{{ $title = .title }}{{ $page = .page }}{{ end }}
+{{- with $title }}
+<div class="page-header">{{ . }}{{ with $page }}{{ partial "rss-link.html" . }}{{ end }}</div>
 {{- end }}

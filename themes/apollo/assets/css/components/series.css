@@ -1,4 +1,10 @@
 .series-nav {
+  li.upcoming,
+  &.series-side li.upcoming {
+    color: var(--upcoming-color);
+    cursor: default;
+  }
+
   /* Undo the flex row that header.css gives every <nav>. */
   display: block;
   border-left: 3px solid var(--primary-color);

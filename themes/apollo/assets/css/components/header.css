@@ -7,11 +7,10 @@
 
 /* 404 header */
 .not-found-header {
+  display: block;
   font-family: var(--header-font);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* In the page flow (not absolutely positioned), so the footer stays below it. */
+  margin: 15vh 0 0;
   text-align: center;
   font-size: 3em;
 }
@@ -139,4 +138,18 @@ h5::before {
 h6::before {
   color: var(--primary-color);
   content: "###### ";
+}
+
+/* RSS icon after a section title */
+.page-header .rss-link {
+  color: var(--primary-color);
+  font-size: 0.5em;
+  margin-left: 0.5em;
+  border-bottom: none;
+  vertical-align: baseline;
+
+  /* The global link hover paints the background in the primary color: the icon turns white on it. */
+  &:hover {
+    color: var(--hover-color);
+  }
 }

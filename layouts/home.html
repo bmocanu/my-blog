@@ -7,8 +7,16 @@
         {{ .Content }}
 
         {{- /* Latest `latestPosts` posts, by last update (`updated` front matter, falling back to the creation date). */}}
-        {{- with first (int site.Params.home.latestPosts) (where site.RegularPages "Section" "in" site.Params.home.sections).ByLastmod.Reverse }}
+        {{- with first (int site.Params.home.latestPosts) (where site.RegularPages "Section" "posts").ByLastmod.Reverse }}
           <h1>Latest posts</h1>
+          <div class="post-list">
+            {{ partial "updated-list.html" . }}
+          </div>
+        {{- end }}
+
+        {{- /* Latest `latestHomelab` homelab posts, same ordering (upcoming ones are not part of the site pages). */}}
+        {{- with first (int site.Params.home.latestHomelab) (where site.RegularPages "Section" "homelab").ByLastmod.Reverse }}
+          <h1>Latest in homelab</h1>
           <div class="post-list">
             {{ partial "updated-list.html" . }}
           </div>

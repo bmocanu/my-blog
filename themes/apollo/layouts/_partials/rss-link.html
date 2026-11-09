@@ -1,0 +1,11 @@
+{{- /*
+Small RSS icon (in the primary color) linking to the RSS feed of a page.
+Nothing is rendered when the page has no RSS output.
+
+@context {page} . The page (usually a section).
+
+@example: {{ partial "rss-link.html" . }}
+*/}}
+{{- with .OutputFormats.Get "rss" -}}
+<a class="rss-link" href="{{ .RelPermalink }}" title="RSS feed" aria-label="RSS feed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></a>
+{{- end }}

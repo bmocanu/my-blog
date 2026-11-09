@@ -161,8 +161,6 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-
-
 ## Functions 
 
 ```go
@@ -430,9 +428,8 @@ var err error = errors.New("something went wrong")
 ```
 
 
-## To remember
+## Remember
 
 1. Empty structs in Go take up no memory space (zero bytes of memory)
 2. Memory padding can be an issue with structs (e.g. Go usually favors the `uint16` to start on an even memory address, therefore an `uint8` before an `uint16` in a struct will lead to a padding of 1 byte to be added after the `uint8`), and the order of the fields in a struct matters. Use `unsafe.Sizeof`, `unsafe.Offsetof` (or `reflect.Type.Size`) to inspect a struct on a target architecture.
 3. A good rule of thumb for structs is to order the fields descending by their size
-
