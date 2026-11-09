@@ -70,9 +70,9 @@ Here are samples of such domain names from my homelab:
 
 Here is a table comparing the two options: public domains vs local domains:
 
-|   | Public   | Local   |
+| | Public | Local |
 | - | -------- | ------- |
-| Cost | $10 - $100 / month | Free |
+| Cost | $25 - $200 / year | Free |
 | Trusted in the network | Yes | Requires self-issued CA trust |
 | Require TLS certificate renewal | Yes, each 90 days | No (you can generate certificates valid for 10 years) |
 | Allows sub-domains | Yes | Yes |
